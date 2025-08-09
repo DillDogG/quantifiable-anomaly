@@ -1,9 +1,40 @@
-[gd_scene format=3 uid="uid://08qqblmyisoh"]
+[gd_scene load_steps=2 format=3 uid="uid://08qqblmyisoh"]
+
+[ext_resource type="Script" uid="uid://b4gp6rus5rpbj" path="res://Scripts/console-text.gd" id="1_lqg2q"]
 
 [node name="ConsoleUi" type="Control"]
+top_level = true
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 85.0
+offset_bottom = 45.0
+color = Color(0.211765, 0.239216, 0.290196, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 83.0
+offset_bottom = 43.0
+color = Color(0.129412, 0.14902, 0.180392, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/default_color = Color(0.45098, 0.466667, 0.486275, 1)
+theme_override_constants/line_separation = -1
+theme_override_font_sizes/normal_font_size = 4
+scroll_active = false
+autowrap_mode = 2
+vertical_alignment = 2
+script = ExtResource("1_lqg2q")
