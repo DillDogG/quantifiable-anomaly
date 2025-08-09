@@ -3,23 +3,27 @@ signal hit
 
 @export var move_speed = 300
 @export var jump_force = 100
+@export var push_force = 15
+var gravity
 var animator
 
 func _ready() -> void:
 	animator = $AnimatedSprite2D
 
+
 func read_input():
 	var input_direction = Input.get_axis("left", "right")
-	velocity.x = input_direction * move_speed
+	velocity.x = input_direction * (move_speed * (0.5 if Input.is_action_pressed("hide") else 1))
 	
 func _physics_process(delta):
-	velocity.y += (get_gravity().y * delta) / 3
+	gravity = get_gravity()
+	velocity.y += (gravity.y * delta) / 3
 	if Input.is_action_pressed("jump") and is_on_floor():
 		velocity.y = -jump_force
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y /= 2
-	if velocity.y > get_gravity().y * 0.01667 * 10:
-		velocity.y = get_gravity().y * 0.01667 * 10
+	if velocity.y > gravity.y * 0.01667 * 10:
+		velocity.y = gravity.y * 0.01667 * 10
 	read_input()
 	if abs(velocity.x) > 0:
 		animator.play("run")
@@ -27,6 +31,13 @@ func _physics_process(delta):
 	else:
 		animator.play("idle")
 	move_and_slide()
+	check_box_collisions()
+	
+func check_box_collisions():
+	for i in get_slide_collision_count():
+		var collision = get_slide_collision(i)
+		if collision.get_collider() is RigidBody2D:
+			collision.get_collider().apply_central_impulse(Vector2(-collision.get_normal().x * push_force, 0))
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
