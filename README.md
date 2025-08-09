@@ -1,3 +1,1 @@
 # quantifiable-anomaly
-
-push
