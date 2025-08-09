@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=4 uid="uid://dkgjms2w01c0r"]
 
-[ext_resource type="PackedScene" path="res://UI/ConsoleUI.tscn" id="1_cp132"]
+[ext_resource type="PackedScene" uid="uid://08qqblmyisoh" path="res://UI/ConsoleUI.tscn" id="1_cp132"]
 [ext_resource type="PackedScene" uid="uid://c36eedtv4umql" path="res://Scenes/player.tscn" id="2_2axvc"]
 [ext_resource type="Texture2D" uid="uid://bs4ntf7pusadm" path="res://Assets/dirt-tileset.png" id="3_7px2j"]
 
