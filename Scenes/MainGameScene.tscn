@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://bjofj5si68384"]
+
+[ext_resource type="PackedScene" uid="uid://08qqblmyisoh" path="res://UI/ConsoleUI.tscn" id="1_cp132"]
+
+[node name="MainGameScene" type="Node2D"]
+
+[node name="ConsoleUi" parent="." instance=ExtResource("1_cp132")]
