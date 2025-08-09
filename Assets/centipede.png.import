@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://giuq3l5t0030"
-path="res://.godot/imported/level-concept.png-245192ac9c8d611bf5146a99f08ceda4.ctex"
+uid="uid://dnnun284uyxdf"
+path="res://.godot/imported/centipede.png-7a0923680f73c87f959ab8500a7e9883.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/level-concept.png"
-dest_files=["res://.godot/imported/level-concept.png-245192ac9c8d611bf5146a99f08ceda4.ctex"]
+source_file="res://Assets/centipede.png"
+dest_files=["res://.godot/imported/centipede.png-7a0923680f73c87f959ab8500a7e9883.ctex"]
 
 [params]
 
