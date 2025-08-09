@@ -1,23 +1,70 @@
-[gd_scene load_steps=4 format=3 uid="uid://dkgjms2w01c0r"]
+[gd_scene load_steps=6 format=4 uid="uid://dkgjms2w01c0r"]
 
-[ext_resource type="PackedScene" uid="uid://08qqblmyisoh" path="res://UI/ConsoleUI.tscn" id="1_cp132"]
+[ext_resource type="PackedScene" path="res://UI/ConsoleUI.tscn" id="1_cp132"]
 [ext_resource type="PackedScene" uid="uid://c36eedtv4umql" path="res://Scenes/player.tscn" id="2_2axvc"]
+[ext_resource type="Texture2D" uid="uid://bs4ntf7pusadm" path="res://Assets/dirt-tileset.png" id="3_7px2j"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2axvc"]
-size = Vector2(202, 20)
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qla6v"]
+texture = ExtResource("3_7px2j")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, -8, 8, 8, -8, 8)
+2:0/0 = 0
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, -8, -8, 8, -8)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, -8, -8)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, -8, -8)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, 8)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, 8, -8, 8, -8)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 8, 8, 8, 8, -0.359716)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.179857, -8, 8, 8, 8, 8, -8)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -0.359716)
+3:2/0 = 0
+3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, -8, 8, 8, 8, 8, 8)
+0:3/0 = 0
+0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -0.359716)
+1:3/0 = 0
+1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, -8, 8, 8, 8, 8, 8)
+2:3/0 = 0
+2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 8, 8, 8, 8, -0.359716)
+3:3/0 = 0
+3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.179857, -8, 8, 8, 8, 8, -8)
+0:4/0 = 0
+0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -0.179857, 8, -8, -8, -8)
+1:4/0 = 0
+1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.359718, 8, 8, 8, -8, -8, -8)
+2:4/0 = 0
+2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 0.179859, 8, -8, -8, -8)
+3:4/0 = 0
+3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.179859, 8, -8, 8, -8, -8, -8)
+0:5/0 = 0
+0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 0.179859, 8, -8, -8, -8)
+1:5/0 = 0
+1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.179859, 8, -8, 8, -8, -8, -8)
+2:5/0 = 0
+2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -0.179857, 8, -8, -8, -8)
+3:5/0 = 0
+3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.359718, 8, 8, 8, -8, -8, -8)
+
+[sub_resource type="TileSet" id="TileSet_undaa"]
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_qla6v")
 
 [node name="MainGameScene" type="Node2D"]
 
 [node name="ConsoleUi" parent="." instance=ExtResource("1_cp132")]
 
 [node name="Player" parent="." instance=ExtResource("2_2axvc")]
-position = Vector2(146, 107)
+position = Vector2(145, 147)
 
-[node name="Node2D" type="Node2D" parent="."]
-position = Vector2(84, 134)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Node2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D/StaticBody2D"]
-position = Vector2(91, 0)
-shape = SubResource("RectangleShape2D_2axvc")
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAAAAAoAAAAAAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAAAAAADAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAoAAAAAAAAAAAASAAoAAAAAAAAAAAATAAoAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_undaa")
