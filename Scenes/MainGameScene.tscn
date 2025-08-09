@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjofj5si68384"]
+[gd_scene load_steps=3 format=3 uid="uid://dkgjms2w01c0r"]
 
-[ext_resource type="PackedScene" uid="uid://08qqblmyisoh" path="res://UI/ConsoleUI.tscn" id="1_cp132"]
+[ext_resource type="PackedScene" path="res://UI/ConsoleUI.tscn" id="1_cp132"]
+[ext_resource type="PackedScene" uid="uid://c36eedtv4umql" path="res://Scenes/player.tscn" id="2_2axvc"]
 
 [node name="MainGameScene" type="Node2D"]
 
 [node name="ConsoleUi" parent="." instance=ExtResource("1_cp132")]
+
+[node name="Player" parent="." instance=ExtResource("2_2axvc")]
+position = Vector2(145, 147)
