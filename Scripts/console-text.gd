@@ -1,9 +1,10 @@
 extends RichTextLabel
+class_name ConsoleUI
 
 func OutputConsoleLog(outLog):
 	newline()
-	push_color(Color(115, 119, 124))
-	add_text(outLog)
+	push_color(Color.WEB_GRAY)
+	add_text("LOG: " + outLog)
 	var currLineCount = get_line_count()
 	while currLineCount > 8:
 		remove_paragraph(0)
@@ -14,7 +15,7 @@ func OutputConsoleLog(outLog):
 func OutputConsoleError(outLog):
 	newline()
 	push_color(Color.RED)
-	add_text(outLog)
+	add_text("ERROR: " + outLog)
 	var currLineCount = get_line_count()
 	while currLineCount > 8:
 		remove_paragraph(0)

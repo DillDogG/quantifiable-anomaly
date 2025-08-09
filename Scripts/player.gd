@@ -5,7 +5,7 @@ signal hit
 @export var jump_force = 100
 @export var push_force = 15
 var gravity
-var animator
+var animator: AnimatedSprite2D
 
 func _ready() -> void:
 	animator = $AnimatedSprite2D
