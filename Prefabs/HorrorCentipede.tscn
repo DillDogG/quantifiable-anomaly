@@ -1,93 +1,9 @@
-[gd_scene load_steps=24 format=3 uid="uid://bnjgcrs1fu8lf"]
+[gd_scene load_steps=25 format=3 uid="uid://bnjgcrs1fu8lf"]
 
 [ext_resource type="Script" path="res://Scripts/horror_centipede.gd" id="1_fhbac"]
 [ext_resource type="Texture2D" uid="uid://dnnun284uyxdf" path="res://Assets/centipede.png" id="1_t47ty"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fhbac"]
-atlas = ExtResource("1_t47ty")
-region = Rect2(96, 16, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6mbke"]
-atlas = ExtResource("1_t47ty")
-region = Rect2(96, 48, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h3s6y"]
-atlas = ExtResource("1_t47ty")
-region = Rect2(64, 80, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u7vbp"]
-atlas = ExtResource("1_t47ty")
-region = Rect2(96, 48, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y3d6h"]
-atlas = ExtResource("1_t47ty")
-region = Rect2(64, 80, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_pswrr"]
-atlas = ExtResource("1_t47ty")
-region = Rect2(96, 48, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jcxjx"]
-atlas = ExtResource("1_t47ty")
-region = Rect2(96, 16, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dpulf"]
-atlas = ExtResource("1_t47ty")
-region = Rect2(96, 48, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_sjpt1"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fhbac")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6mbke")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h3s6y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u7vbp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y3d6h")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_pswrr")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jcxjx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_dpulf")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_uaemq"]
-atlas = ExtResource("1_t47ty")
-region = Rect2(64, 48, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_te8lg"]
-atlas = ExtResource("1_t47ty")
-region = Rect2(64, 16, 32, 32)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_ih6eu"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_uaemq")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_te8lg")
-}],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}]
+[ext_resource type="PackedScene" uid="uid://dkisk02dd45eb" path="res://Prefabs/HorrorCentipedeSegment.tscn" id="2_6mbke"]
+[ext_resource type="Script" uid="uid://ur5fxy5jvr5k" path="res://Scripts/KillPlayer.gd" id="4_h3s6y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uys0g"]
 atlas = ExtResource("1_t47ty")
@@ -153,23 +69,116 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="HorrorCentipede" type="Node2D" node_paths=PackedStringArray("head", "body", "tail")]
-script = ExtResource("1_fhbac")
-head = NodePath("AnimatedSprite2D(Head)")
-body = [NodePath("AnimatedSprite2D(Segment)")]
-tail = NodePath("AnimatedSprite2D(Tail)")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3s6y"]
+size = Vector2(32, 16)
 
-[node name="AnimatedSprite2D(Head)" type="AnimatedSprite2D" parent="."]
+[sub_resource type="AtlasTexture" id="AtlasTexture_fhbac"]
+atlas = ExtResource("1_t47ty")
+region = Rect2(96, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mbke"]
+atlas = ExtResource("1_t47ty")
+region = Rect2(96, 48, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h3s6y"]
+atlas = ExtResource("1_t47ty")
+region = Rect2(64, 80, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7vbp"]
+atlas = ExtResource("1_t47ty")
+region = Rect2(96, 48, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3d6h"]
+atlas = ExtResource("1_t47ty")
+region = Rect2(64, 80, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pswrr"]
+atlas = ExtResource("1_t47ty")
+region = Rect2(96, 48, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jcxjx"]
+atlas = ExtResource("1_t47ty")
+region = Rect2(96, 16, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dpulf"]
+atlas = ExtResource("1_t47ty")
+region = Rect2(96, 48, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sjpt1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fhbac")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mbke")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h3s6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7vbp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3d6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pswrr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jcxjx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dpulf")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_u7vbp"]
+size = Vector2(32, 16)
+
+[node name="HorrorCentipede" type="Node2D"]
+
+[node name="NodeBodies" type="Node2D" parent="."]
+
+[node name="Node2D" type="Node2D" parent="NodeBodies" node_paths=PackedStringArray("previous")]
+position = Vector2(-32, 0)
+script = ExtResource("1_fhbac")
+previous = NodePath("../../NodeHead")
+
+[node name="AnimatedSprite2D(Segment)" parent="NodeBodies/Node2D" instance=ExtResource("2_6mbke")]
+
+[node name="NodeTail" type="Node2D" parent="." node_paths=PackedStringArray("previous")]
+position = Vector2(-64, 0)
+script = ExtResource("1_fhbac")
+previous = NodePath("../NodeBodies/Node2D")
+
+[node name="AnimatedSprite2D(Tail)" type="AnimatedSprite2D" parent="NodeTail"]
+sprite_frames = SubResource("SpriteFrames_qi70u")
+autoplay = "default"
+frame_progress = 0.421723
+
+[node name="Area2D" type="Area2D" parent="NodeTail/AnimatedSprite2D(Tail)"]
+script = ExtResource("4_h3s6y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NodeTail/AnimatedSprite2D(Tail)/Area2D"]
+shape = SubResource("RectangleShape2D_h3s6y")
+
+[node name="NodeHead" type="Node2D" parent="."]
+script = ExtResource("1_fhbac")
+
+[node name="AnimatedSprite2D(Head)" type="AnimatedSprite2D" parent="NodeHead"]
 z_index = 1
 sprite_frames = SubResource("SpriteFrames_sjpt1")
+autoplay = "default"
 frame_progress = 0.46945
 
-[node name="AnimatedSprite2D(Segment)" type="AnimatedSprite2D" parent="."]
+[node name="Area2D" type="Area2D" parent="NodeHead/AnimatedSprite2D(Head)"]
 position = Vector2(-32, 0)
-sprite_frames = SubResource("SpriteFrames_ih6eu")
-frame_progress = 0.247288
+script = ExtResource("4_h3s6y")
 
-[node name="AnimatedSprite2D(Tail)" type="AnimatedSprite2D" parent="."]
-position = Vector2(-64, 0)
-sprite_frames = SubResource("SpriteFrames_qi70u")
-frame_progress = 0.421723
+[node name="CollisionShape2D" type="CollisionShape2D" parent="NodeHead/AnimatedSprite2D(Head)/Area2D"]
+position = Vector2(32, 0)
+shape = SubResource("RectangleShape2D_u7vbp")

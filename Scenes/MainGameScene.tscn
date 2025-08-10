@@ -50,8 +50,6 @@ size = Vector2(20, 90)
 
 [node name="MainGameScene" type="Node2D"]
 
-[node name="ConsoleUi" parent="." instance=ExtResource("1_cp132")]
-
 [node name="Background" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
@@ -74,20 +72,24 @@ grow_vertical = 2
 texture = ExtResource("2_3g84q")
 expand_mode = 2
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(160, 90)
-
-[node name="HorrorCentipede" parent="Camera2D" instance=ExtResource("9_7hgva")]
+[node name="HorrorCentipede" parent="." instance=ExtResource("9_7hgva")]
 top_level = true
 position = Vector2(0, 168)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qlmn3")
 autoplay = true
+parameters/looping = true
 
 [node name="Player" parent="." instance=ExtResource("2_2axvc")]
 position = Vector2(129, 79)
 push_force = 10
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
+
+[node name="ConsoleUi" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("1_cp132")]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_map_data = PackedByteArray("AAAAAAoAAAAAAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAAAAAADAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAoAAAAAAAAAAAATAAoAAAAAAAAAAAASAAoAAAAAAAAAAAAKAAkAAAAAAAIAAAALAAkAAAABAAIAAAAMAAgAAAAAAAIAAAANAAgAAAABAAIAAAA=")
@@ -124,7 +126,10 @@ deactivatable = true
 
 [node name="Switch2" parent="." node_paths=PackedStringArray("connectedObjects") instance=ExtResource("5_undaa")]
 position = Vector2(283, 152)
-connectedObjects = [NodePath("../Door2")]
+connectedObjects = [NodePath("../Door2"), NodePath("../Door3")]
 
 [node name="Door2" parent="." instance=ExtResource("8_tgp8p")]
 position = Vector2(257, 152)
+
+[node name="Door3" parent="." instance=ExtResource("8_tgp8p")]
+position = Vector2(257, 136)

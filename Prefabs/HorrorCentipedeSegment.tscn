@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://dkisk02dd45eb"]
+
+[ext_resource type="Texture2D" uid="uid://dnnun284uyxdf" path="res://Assets/centipede.png" id="1_d4oug"]
+[ext_resource type="Script" uid="uid://ur5fxy5jvr5k" path="res://Scripts/KillPlayer.gd" id="2_0g44n"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uaemq"]
+atlas = ExtResource("1_d4oug")
+region = Rect2(64, 48, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_te8lg"]
+atlas = ExtResource("1_d4oug")
+region = Rect2(64, 16, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ih6eu"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uaemq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_te8lg")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d4oug"]
+size = Vector2(32, 16)
+
+[node name="AnimatedSprite2D(Segment)" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_ih6eu")
+autoplay = "default"
+frame_progress = 0.247288
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("2_0g44n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_d4oug")
