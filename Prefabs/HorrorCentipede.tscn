@@ -1,5 +1,6 @@
-[gd_scene load_steps=23 format=3 uid="uid://bnjgcrs1fu8lf"]
+[gd_scene load_steps=24 format=3 uid="uid://bnjgcrs1fu8lf"]
 
+[ext_resource type="Script" uid="uid://d2jy7xdt5c416" path="res://Scripts/horror_centipede.gd" id="1_fhbac"]
 [ext_resource type="Texture2D" uid="uid://dnnun284uyxdf" path="res://Assets/centipede.png" id="1_t47ty"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhbac"]
@@ -152,7 +153,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="HorrorCentipede" type="Node2D"]
+[node name="HorrorCentipede" type="Node2D" node_paths=PackedStringArray("head", "body", "tail")]
+script = ExtResource("1_fhbac")
+head = NodePath("AnimatedSprite2D(Head)")
+body = [NodePath("AnimatedSprite2D(Segment)")]
+tail = NodePath("AnimatedSprite2D(Tail)")
 
 [node name="AnimatedSprite2D(Head)" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_sjpt1")

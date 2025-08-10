@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://crfgbkakysfsk"]
+[gd_scene load_steps=8 format=3 uid="uid://cp2um2303ghgt"]
 
 [ext_resource type="Texture2D" uid="uid://dnnun284uyxdf" path="res://Assets/centipede.png" id="1_xj02g"]
 
@@ -49,10 +49,11 @@ animations = [{
 [node name="CuteCentipede" type="Node2D"]
 
 [node name="AnimatedSprite2D(Head)" type="AnimatedSprite2D" parent="."]
+position = Vector2(-10, 0)
 sprite_frames = SubResource("SpriteFrames_lkx7k")
 frame_progress = 0.178806
 
 [node name="AnimatedSprite2D(Segment)" type="AnimatedSprite2D" parent="."]
-position = Vector2(-32, 0)
+position = Vector2(-42, 0)
 sprite_frames = SubResource("SpriteFrames_t1y7t")
 frame_progress = 0.969683

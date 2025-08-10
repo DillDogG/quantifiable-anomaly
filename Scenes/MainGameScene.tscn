@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dkgjms2w01c0r"]
+[gd_scene load_steps=14 format=4 uid="uid://dkgjms2w01c0r"]
 
 [ext_resource type="PackedScene" uid="uid://08qqblmyisoh" path="res://UI/ConsoleUI.tscn" id="1_cp132"]
 [ext_resource type="PackedScene" uid="uid://c36eedtv4umql" path="res://Scenes/player.tscn" id="2_2axvc"]
@@ -6,8 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://dqvfn2ttu6eld" path="res://Audio/calmTheme.mp3" id="2_qlmn3"]
 [ext_resource type="Texture2D" uid="uid://bs4ntf7pusadm" path="res://Assets/dirt-tileset.png" id="3_7px2j"]
 [ext_resource type="PackedScene" uid="uid://6nfewtt8h4rb" path="res://Prefabs/PushableBox.tscn" id="4_qla6v"]
-[ext_resource type="PackedScene" uid="uid://bj7xl6gutpntf" path="res://Prefabs/Switch.tscn" id="5_undaa"]
-[ext_resource type="PackedScene" uid="uid://fgyprcqc7m4j" path="res://Prefabs/Door.tscn" id="8_tgp8p"]
+[ext_resource type="PackedScene" uid="uid://bbjmtjfauwneq" path="res://Prefabs/Switch.tscn" id="5_undaa"]
+[ext_resource type="PackedScene" uid="uid://c4m4pm15wej5p" path="res://Prefabs/Door.tscn" id="8_tgp8p"]
+[ext_resource type="PackedScene" uid="uid://bnjgcrs1fu8lf" path="res://Prefabs/HorrorCentipede.tscn" id="9_7hgva"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qla6v"]
 texture = ExtResource("3_7px2j")
@@ -51,9 +52,6 @@ size = Vector2(20, 90)
 
 [node name="ConsoleUi" parent="." instance=ExtResource("1_cp132")]
 
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(160, 90)
-
 [node name="Background" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 8
@@ -75,6 +73,13 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_3g84q")
 expand_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 90)
+
+[node name="HorrorCentipede" parent="Camera2D" instance=ExtResource("9_7hgva")]
+top_level = true
+position = Vector2(0, 168)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("2_qlmn3")

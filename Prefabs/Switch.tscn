@@ -1,7 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://bj7xl6gutpntf"]
+[gd_scene load_steps=4 format=3 uid="uid://bbjmtjfauwneq"]
 
 [ext_resource type="Texture2D" uid="uid://prbhpyig8phk" path="res://Assets/switch.png" id="1_vnc1v"]
-[ext_resource type="Script" uid="uid://dvjns2o7mfhv5" path="res://Scripts/Switch.gd" id="2_vnc1v"]
+[ext_resource type="Script" path="res://Scripts/Switch.gd" id="2_vnc1v"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xng1o"]
 size = Vector2(50, 32)
