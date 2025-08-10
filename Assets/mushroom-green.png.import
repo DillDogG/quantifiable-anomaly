@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jhwcyyhl4see"
-path="res://.godot/imported/door.png-a542cb27d09af7bf397856fe9af441c6.ctex"
+uid="uid://d2imsitb30sy6"
+path="res://.godot/imported/mushroom-green.png-78db6f3792506596c029f75519eef01a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/door.png"
-dest_files=["res://.godot/imported/door.png-a542cb27d09af7bf397856fe9af441c6.ctex"]
+source_file="res://Assets/mushroom-green.png"
+dest_files=["res://.godot/imported/mushroom-green.png-78db6f3792506596c029f75519eef01a.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://jhwcyyhl4see"
-path="res://.godot/imported/door.png-a542cb27d09af7bf397856fe9af441c6.ctex"
+uid="uid://k0uqs5kchi7a"
+path="res://.godot/imported/corruptedFlyBug.png-9c7688d4e508de31e06e78262286f8dd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/door.png"
-dest_files=["res://.godot/imported/door.png-a542cb27d09af7bf397856fe9af441c6.ctex"]
+source_file="res://Assets/corruptedFlyBug.png"
+dest_files=["res://.godot/imported/corruptedFlyBug.png-9c7688d4e508de31e06e78262286f8dd.ctex"]
 
 [params]
 
