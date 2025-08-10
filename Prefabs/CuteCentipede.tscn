@@ -51,9 +51,9 @@ animations = [{
 [node name="AnimatedSprite2D(Head)" type="AnimatedSprite2D" parent="."]
 position = Vector2(-10, 0)
 sprite_frames = SubResource("SpriteFrames_lkx7k")
-frame_progress = 0.178806
+frame_progress = 0.492434
 
 [node name="AnimatedSprite2D(Segment)" type="AnimatedSprite2D" parent="."]
 position = Vector2(-42, 0)
 sprite_frames = SubResource("SpriteFrames_t1y7t")
-frame_progress = 0.969683
+frame_progress = 0.283311

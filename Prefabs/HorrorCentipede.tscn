@@ -160,15 +160,18 @@ body = [NodePath("AnimatedSprite2D(Segment)")]
 tail = NodePath("AnimatedSprite2D(Tail)")
 
 [node name="AnimatedSprite2D(Head)" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(9, -15)
 sprite_frames = SubResource("SpriteFrames_sjpt1")
-frame_progress = 0.553814
+frame_progress = 0.541819
 
 [node name="AnimatedSprite2D(Segment)" type="AnimatedSprite2D" parent="."]
-position = Vector2(-32, 0)
+position = Vector2(-15, -7)
+rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_ih6eu")
-frame_progress = 0.33166
+frame_progress = 0.319656
 
 [node name="AnimatedSprite2D(Tail)" type="AnimatedSprite2D" parent="."]
 position = Vector2(-64, 0)
 sprite_frames = SubResource("SpriteFrames_qi70u")
-frame_progress = 0.506091
+frame_progress = 0.494092
