@@ -1,6 +1,6 @@
 [gd_scene load_steps=24 format=3 uid="uid://bnjgcrs1fu8lf"]
 
-[ext_resource type="Script" uid="uid://d2jy7xdt5c416" path="res://Scripts/horror_centipede.gd" id="1_fhbac"]
+[ext_resource type="Script" path="res://Scripts/horror_centipede.gd" id="1_fhbac"]
 [ext_resource type="Texture2D" uid="uid://dnnun284uyxdf" path="res://Assets/centipede.png" id="1_t47ty"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhbac"]
