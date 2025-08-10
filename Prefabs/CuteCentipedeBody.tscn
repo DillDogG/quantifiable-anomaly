@@ -26,9 +26,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbmdu"]
-size = Vector2(32, 16)
+size = Vector2(31, 16)
 
 [node name="CuteCentipedeBody" type="RigidBody2D"]
+z_index = -2
+collision_layer = 8
+collision_mask = 8
+lock_rotation = true
 custom_integrator = true
 script = ExtResource("1_nv4g6")
 
@@ -38,5 +42,7 @@ sprite_frames = SubResource("SpriteFrames_dy72m")
 animation = &"move"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(17, 9)
+position = Vector2(16.5, 9)
 shape = SubResource("RectangleShape2D_lbmdu")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

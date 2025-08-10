@@ -3,9 +3,6 @@
 [ext_resource type="Script" uid="uid://yhh3vc47ty11" path="res://Scripts/cute-centipede.gd" id="1_uuduw"]
 [ext_resource type="Texture2D" uid="uid://dnnun284uyxdf" path="res://Assets/centipede.png" id="2_e0qsj"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j00xv"]
-size = Vector2(32.5, 16)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_to24j"]
 atlas = ExtResource("2_e0qsj")
 region = Rect2(32, 0, 32, 16)
@@ -28,17 +25,23 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j00xv"]
+size = Vector2(32, 16)
+
 [node name="CuteCentipedeHead" type="RigidBody2D"]
 position = Vector2(31, 21)
+collision_layer = 8
+collision_mask = 8
+lock_rotation = true
 custom_integrator = true
 script = ExtResource("1_uuduw")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.75, 0)
-shape = SubResource("RectangleShape2D_j00xv")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(1, 0)
 sprite_frames = SubResource("SpriteFrames_lkx7k")
 animation = &"move"
 frame_progress = 0.624279
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_j00xv")
