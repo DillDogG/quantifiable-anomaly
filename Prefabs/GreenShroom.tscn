@@ -1,0 +1,62 @@
+[gd_scene load_steps=9 format=3 uid="uid://c6ytsuvueein8"]
+
+[ext_resource type="Script" uid="uid://du4qepj8sae88" path="res://Scripts/npcshroom.gd" id="1_a7lti"]
+[ext_resource type="Texture2D" uid="uid://d2imsitb30sy6" path="res://Assets/mushroom-green.png" id="2_xdbxh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cqb7"]
+atlas = ExtResource("2_xdbxh")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egifb"]
+atlas = ExtResource("2_xdbxh")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7q24"]
+atlas = ExtResource("2_xdbxh")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2iin"]
+atlas = ExtResource("2_xdbxh")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_m5ucr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cqb7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egifb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7q24")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2iin")
+}],
+"loop": true,
+"name": &"walk",
+"speed": 5.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_i1t3p"]
+radius = 5.0
+height = 16.0
+
+[node name="GreenShroom" type="RigidBody2D"]
+collision_layer = 4
+collision_mask = 4
+lock_rotation = true
+script = ExtResource("1_a7lti")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_m5ucr")
+animation = &"walk"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_i1t3p")
