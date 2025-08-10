@@ -5,7 +5,7 @@ signal hit
 @export var jump_force = 100
 @export var push_force = 15
 var gravity
-var animator
+var animator: AnimatedSprite2D
 
 func _ready() -> void:
 	animator = $AnimatedSprite2D
@@ -13,7 +13,7 @@ func _ready() -> void:
 
 func read_input():
 	var input_direction = Input.get_axis("left", "right")
-	velocity.x = input_direction * (move_speed * (0.5 if Input.is_action_pressed("hide") else 1))
+	velocity.x = input_direction * (move_speed * (0.5 if Input.is_action_pressed("hide") else 1.0))
 	
 func _physics_process(delta):
 	gravity = get_gravity()
@@ -22,8 +22,8 @@ func _physics_process(delta):
 		velocity.y = -jump_force
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y /= 2
-	if velocity.y > gravity.y * 0.01667 * 10:
-		velocity.y = gravity.y * 0.01667 * 10
+	if velocity.y > gravity.y * 0.01667 * 20:
+		velocity.y = gravity.y * 0.01667 * 20
 	read_input()
 	if abs(velocity.x) > 0:
 		animator.play("run")
@@ -40,7 +40,7 @@ func check_box_collisions():
 			collision.get_collider().apply_central_impulse(Vector2(-collision.get_normal().x * push_force, 0))
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	hide() # Player disappears after being hit.
 	hit.emit()
 	# Must be deferred as we can't change physics properties on a physics callback.

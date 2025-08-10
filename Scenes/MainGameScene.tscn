@@ -1,59 +1,41 @@
-[gd_scene load_steps=8 format=4 uid="uid://dkgjms2w01c0r"]
+[gd_scene load_steps=14 format=4 uid="uid://dkgjms2w01c0r"]
 
-[ext_resource type="PackedScene" path="res://UI/ConsoleUI.tscn" id="1_cp132"]
+[ext_resource type="PackedScene" uid="uid://08qqblmyisoh" path="res://UI/ConsoleUI.tscn" id="1_cp132"]
 [ext_resource type="PackedScene" uid="uid://c36eedtv4umql" path="res://Scenes/player.tscn" id="2_2axvc"]
+[ext_resource type="Texture2D" uid="uid://vmaykyfxmemh" path="res://Assets/background.png" id="2_3g84q"]
+[ext_resource type="AudioStream" uid="uid://dqvfn2ttu6eld" path="res://Audio/calmTheme.mp3" id="2_qlmn3"]
 [ext_resource type="Texture2D" uid="uid://bs4ntf7pusadm" path="res://Assets/dirt-tileset.png" id="3_7px2j"]
 [ext_resource type="PackedScene" uid="uid://6nfewtt8h4rb" path="res://Prefabs/PushableBox.tscn" id="4_qla6v"]
+[ext_resource type="PackedScene" uid="uid://bbjmtjfauwneq" path="res://Prefabs/Switch.tscn" id="5_undaa"]
+[ext_resource type="PackedScene" uid="uid://c4m4pm15wej5p" path="res://Prefabs/Door.tscn" id="8_tgp8p"]
+[ext_resource type="PackedScene" uid="uid://bnjgcrs1fu8lf" path="res://Prefabs/HorrorCentipede.tscn" id="9_7hgva"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qla6v"]
 texture = ExtResource("3_7px2j")
 0:0/0 = 0
-0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
-1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
 3:0/0 = 0
-3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, -8, -8, -8, 8, -8)
 0:1/0 = 0
-0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, -8, -8)
 1:1/0 = 0
-1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, -8, -8)
 2:1/0 = 0
-2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 8, 8, -8, -8, 8)
 3:1/0 = 0
-3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, 8, 8, -8, 8, -8)
 0:2/0 = 0
-0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 8, 8, 8, 8, -0.359716)
 1:2/0 = 0
-1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.179857, -8, 8, 8, 8, 8, -8)
 2:2/0 = 0
-2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -0.359716)
 3:2/0 = 0
-3:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, -8, 8, 8, 8, 8, 8)
 0:3/0 = 0
-0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -8, 8, 8, 8, 8, -0.359716)
 1:3/0 = 0
-1:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0, -8, 8, 8, 8, 8, 8)
 2:3/0 = 0
-2:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, -8, 8, 8, 8, 8, -0.359716)
 3:3/0 = 0
-3:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -0.179857, -8, 8, 8, 8, 8, -8)
 0:4/0 = 0
-0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -0.179857, 8, -8, -8, -8)
 1:4/0 = 0
-1:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.359718, 8, 8, 8, -8, -8, -8)
 2:4/0 = 0
-2:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 0.179859, 8, -8, -8, -8)
 3:4/0 = 0
-3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.179859, 8, -8, 8, -8, -8, -8)
 0:5/0 = 0
-0:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 8, 8, 0.179859, 8, -8, -8, -8)
 1:5/0 = 0
-1:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.179859, 8, -8, 8, -8, -8, -8)
 2:5/0 = 0
-2:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -0.179857, 8, -8, -8, -8)
 3:5/0 = 0
-3:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 0.359718, 8, 8, 8, -8, -8, -8)
 
 [sub_resource type="TileSet" id="TileSet_undaa"]
 physics_layer_0/collision_layer = 3
@@ -63,16 +45,52 @@ sources/0 = SubResource("TileSetAtlasSource_qla6v")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qla6v"]
 size = Vector2(373, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_undaa"]
+size = Vector2(20, 90)
+
 [node name="MainGameScene" type="Node2D"]
 
 [node name="ConsoleUi" parent="." instance=ExtResource("1_cp132")]
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_right = 320.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="TextureRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_3g84q")
+expand_mode = 2
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(160, 90)
+
+[node name="HorrorCentipede" parent="Camera2D" instance=ExtResource("9_7hgva")]
+top_level = true
+position = Vector2(0, 168)
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_qlmn3")
+autoplay = true
 
 [node name="Player" parent="." instance=ExtResource("2_2axvc")]
 position = Vector2(129, 79)
 push_force = 10
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
-tile_map_data = PackedByteArray("AAAAAAoAAAAAAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAAAAAADAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAoAAAAAAAAAAAATAAoAAAAAAAAAAAASAAoAAAAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAAAAAoAAAAAAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAAAAAADAAoAAAAAAAAAAAAEAAoAAAAAAAAAAAAFAAoAAAAAAAAAAAAGAAoAAAAAAAAAAAAHAAoAAAAAAAAAAAAIAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAKAAoAAAAAAAAAAAALAAoAAAAAAAAAAAAMAAoAAAAAAAAAAAANAAoAAAAAAAAAAAAOAAoAAAAAAAAAAAAPAAoAAAAAAAAAAAAQAAoAAAAAAAAAAAARAAoAAAAAAAAAAAATAAoAAAAAAAAAAAASAAoAAAAAAAAAAAAKAAkAAAAAAAIAAAALAAkAAAABAAIAAAAMAAgAAAAAAAIAAAANAAgAAAABAAIAAAA=")
 tile_set = SubResource("TileSet_undaa")
 
 [node name="PushableBox" parent="." instance=ExtResource("4_qla6v")]
@@ -83,5 +101,30 @@ collision_layer = 3
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(176.5, 119)
+position = Vector2(170, 170)
 shape = SubResource("RectangleShape2D_qla6v")
+
+[node name="Switch" parent="." node_paths=PackedStringArray("connectedObjects") instance=ExtResource("5_undaa")]
+position = Vector2(81, 152)
+resetTimer = 5
+connectedObjects = [NodePath("../Door")]
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+collision_layer = 3
+collision_mask = 3
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+position = Vector2(203, 150)
+rotation = 1.11701
+shape = SubResource("RectangleShape2D_undaa")
+
+[node name="Door" parent="." instance=ExtResource("8_tgp8p")]
+position = Vector2(40, 152)
+deactivatable = true
+
+[node name="Switch2" parent="." node_paths=PackedStringArray("connectedObjects") instance=ExtResource("5_undaa")]
+position = Vector2(283, 152)
+connectedObjects = [NodePath("../Door2")]
+
+[node name="Door2" parent="." instance=ExtResource("8_tgp8p")]
+position = Vector2(257, 152)
