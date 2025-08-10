@@ -24,5 +24,4 @@ func _physics_process(delta):
 			animator.play("idle")
 			move_speed *= -1
 			animator.flip_h = move_speed < 0
-			print(move_speed)
 			timer = timerSet
