@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjxutlydj8wlt"]
+
+[ext_resource type="Texture2D" uid="uid://dnnun284uyxdf" path="res://Assets/centipede.png" id="1_hal5e"]
+[ext_resource type="Script" uid="uid://yhh3vc47ty11" path="res://Scripts/cute-centipede.gd" id="1_nv4g6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nv4g6"]
+atlas = ExtResource("1_hal5e")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3hbht"]
+atlas = ExtResource("1_hal5e")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dy72m"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nv4g6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3hbht")
+}],
+"loop": true,
+"name": &"move",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lbmdu"]
+size = Vector2(32, 16)
+
+[node name="CuteCentipedeBody" type="RigidBody2D"]
+custom_integrator = true
+script = ExtResource("1_nv4g6")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(17, 9)
+sprite_frames = SubResource("SpriteFrames_dy72m")
+animation = &"move"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(17, 9)
+shape = SubResource("RectangleShape2D_lbmdu")
