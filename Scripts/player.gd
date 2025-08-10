@@ -1,9 +1,10 @@
 extends CharacterBody2D
-signal hit
+class_name Player
 
 @export var move_speed = 300
 @export var jump_force = 100
 @export var push_force = 15
+@onready var jam = preload("res://Prefabs/Evil_Jam.tscn")
 var gravity
 var animator: AnimatedSprite2D
 
@@ -37,11 +38,13 @@ func check_box_collisions():
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		if collision.get_collider() is RigidBody2D:
-			collision.get_collider().apply_central_impulse(Vector2(-collision.get_normal().x * push_force, 0))
+			collision.get_collider().apply_central_impulse(-collision.get_normal() * push_force)
+		if collision.get_collider().is_in_group("centipede"):
+			print("test")
 
 
-func _on_area_2d_body_entered(_body: Node2D) -> void:
-	hide() # Player disappears after being hit.
-	hit.emit()
-	# Must be deferred as we can't change physics properties on a physics callback.
-	$CollisionShape2D.set_deferred("disabled", true)
+func dropJam():
+	var jamInstance = jam.instantiate()
+	jamInstance.global_position = position
+	get_tree().root.get_child(0).add_child.call_deferred(jamInstance)
+	return jamInstance
