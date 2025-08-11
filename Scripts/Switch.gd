@@ -17,6 +17,7 @@ func _physics_process(_delta):
 				handleInteraction()
 
 func handleInteraction():
+	$ActivateSound.play()
 	flip_h = true
 	interactedWith = true
 	consoleUI.OutputConsoleLog("Switch activated")
@@ -26,6 +27,7 @@ func handleInteraction():
 		resetSwitch()
 
 func resetSwitch():
+	$ResetSound.play()
 	flip_h = false
 	interactedWith = false
 	consoleUI.OutputConsoleLog("Switch deactivated")
