@@ -38,7 +38,7 @@ func check_box_collisions():
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		if collision.get_collider() is RigidBody2D:
-			collision.get_collider().apply_central_impulse(-collision.get_normal() * push_force)
+			collision.get_collider().apply_central_impulse(Vector2(-collision.get_normal().x * push_force, 0))
 		if collision.get_collider().is_in_group("centipede"):
 			print("test")
 

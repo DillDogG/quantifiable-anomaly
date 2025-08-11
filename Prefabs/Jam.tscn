@@ -1,0 +1,41 @@
+[gd_scene load_steps=7 format=3 uid="uid://c8gyhl35pcxmi"]
+
+[ext_resource type="Script" uid="uid://c523tl7jb7i4f" path="res://Scripts/jam.gd" id="1_gsx1b"]
+[ext_resource type="Texture2D" uid="uid://dfbnfbl0ig3sy" path="res://Assets/jam.png" id="1_ojugm"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsx1b"]
+atlas = ExtResource("1_ojugm")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_muutw"]
+atlas = ExtResource("1_ojugm")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_oty08"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsx1b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_muutw")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_isxo7"]
+size = Vector2(12, 16)
+
+[node name="Jam" type="Area2D"]
+script = ExtResource("1_gsx1b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_oty08")
+frame_progress = 0.575309
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_isxo7")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bwbgyrfmae4hu"]
+
+[ext_resource type="Script" uid="uid://bfphbsk5v2l63" path="res://Scripts/kill_field.gd" id="1_6tawd"]
+[ext_resource type="Texture2D" uid="uid://k0uqs5kchi7a" path="res://Assets/corruptedFlyBug.png" id="2_kef24"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26ywh"]
+atlas = ExtResource("2_kef24")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d0lyh"]
+atlas = ExtResource("2_kef24")
+region = Rect2(16, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cjjp1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26ywh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_d0lyh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_emehh"]
+size = Vector2(16, 16)
+
+[node name="KillField" type="Area2D"]
+script = ExtResource("1_6tawd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_cjjp1")
+frame_progress = 0.313964
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_emehh")

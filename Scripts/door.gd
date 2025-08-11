@@ -5,11 +5,11 @@ extends "res://Scripts/interactable.gd"
 var open = false
 
 func handleInteraction():
-	animator.play("default")
+	animator.play("open")
 	open = true
 	
 func deactivateObject():
-	animator.play_backwards("default")
+	animator.play_backwards("open")
 	open = false
 
 func _on_animation_finished() -> void:

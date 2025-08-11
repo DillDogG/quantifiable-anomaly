@@ -1,9 +1,9 @@
 [gd_scene load_steps=25 format=3 uid="uid://bnjgcrs1fu8lf"]
 
-[ext_resource type="Script" path="res://Scripts/horror_centipede.gd" id="1_fhbac"]
+[ext_resource type="Script" uid="uid://d2jy7xdt5c416" path="res://Scripts/horror_centipede.gd" id="1_fhbac"]
 [ext_resource type="Texture2D" uid="uid://dnnun284uyxdf" path="res://Assets/centipede.png" id="1_t47ty"]
 [ext_resource type="PackedScene" uid="uid://dkisk02dd45eb" path="res://Prefabs/HorrorCentipedeSegment.tscn" id="2_6mbke"]
-[ext_resource type="Script" uid="uid://ur5fxy5jvr5k" path="res://Scripts/KillPlayer.gd" id="4_h3s6y"]
+[ext_resource type="Script" path="res://Scripts/KillPlayer.gd" id="4_h3s6y"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uys0g"]
 atlas = ExtResource("1_t47ty")

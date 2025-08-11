@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bs4ntf7pusadm" path="res://Assets/dirt-tileset.png" id="3_7px2j"]
 [ext_resource type="PackedScene" uid="uid://6nfewtt8h4rb" path="res://Prefabs/PushableBox.tscn" id="4_qla6v"]
 [ext_resource type="PackedScene" path="res://Prefabs/Switch.tscn" id="5_undaa"]
-[ext_resource type="PackedScene" path="res://Prefabs/Door.tscn" id="8_tgp8p"]
+[ext_resource type="PackedScene" uid="uid://doax28hy0wkcw" path="res://Prefabs/Door.tscn" id="8_tgp8p"]
 [ext_resource type="PackedScene" uid="uid://bnjgcrs1fu8lf" path="res://Prefabs/HorrorCentipede.tscn" id="9_7hgva"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qla6v"]
@@ -48,7 +48,7 @@ size = Vector2(373, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_undaa"]
 size = Vector2(20, 90)
 
-[node name="MainGameScene" type="Node2D"]
+[node name="MainGameScene2" type="Node2D"]
 
 [node name="Background" type="Control" parent="."]
 layout_mode = 3

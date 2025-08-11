@@ -1,7 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://be8xmapaiperu"]
+[gd_scene load_steps=11 format=3 uid="uid://be8xmapaiperu"]
 
 [ext_resource type="Script" uid="uid://du4qepj8sae88" path="res://Scripts/npcshroom.gd" id="1_1bcs1"]
 [ext_resource type="Texture2D" uid="uid://c0vru4cnmqs52" path="res://Assets/mushroom-blue.png" id="2_upuca"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jx3x"]
+atlas = ExtResource("2_upuca")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_puuuh"]
+atlas = ExtResource("2_upuca")
+region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1bcs1"]
 atlas = ExtResource("2_upuca")
@@ -21,6 +29,22 @@ region = Rect2(48, 16, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_n15rs"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jx3x")
+}],
+"loop": true,
+"name": &"dead",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_puuuh")
+}],
+"loop": true,
+"name": &"graverobbed",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1bcs1")
@@ -56,7 +80,7 @@ script = ExtResource("1_1bcs1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_n15rs")
-animation = &"idle"
+animation = &"graverobbed"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_i1t3p")
