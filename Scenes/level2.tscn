@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://brn0s1jrg4vj0" path="res://Prefabs/BlueShroom.tscn" id="13_yjaoa"]
 [ext_resource type="PackedScene" uid="uid://c6ytsuvueein8" path="res://Prefabs/GreenShroom.tscn" id="14_o1sn7"]
 [ext_resource type="PackedScene" uid="uid://ykyqseloq62s" path="res://Prefabs/MovingPlatform.tscn" id="15_u1na6"]
-[ext_resource type="Script" uid="uid://ur5fxy5jvr5k" path="res://Scripts/KillPlayer.gd" id="16_se7y5"]
+[ext_resource type="Script" path="res://Scripts/KillPlayer.gd" id="16_se7y5"]
 [ext_resource type="PackedScene" uid="uid://el6bli7gqrje" path="res://Prefabs/BlueBug.tscn" id="18_051s1"]
 [ext_resource type="PackedScene" uid="uid://b3q0gq2qln0g5" path="res://Prefabs/Evil_Jam.tscn" id="19_051s1"]
 [ext_resource type="PackedScene" uid="uid://1qi3hvhflads" path="res://Prefabs/Fly.tscn" id="19_in4v8"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dp07p1ncdbu2a"]
+[gd_scene load_steps=25 format=4 uid="uid://dp07p1ncdbu2a"]
 
 [ext_resource type="Script" uid="uid://cx7yrvhi2p6qj" path="res://Scripts/music.gd" id="1_nesy5"]
 [ext_resource type="AudioStream" uid="uid://dqvfn2ttu6eld" path="res://Audio/calmTheme.mp3" id="1_xhya1"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c8gyhl35pcxmi" path="res://Prefabs/Jam.tscn" id="11_lhhwt"]
 [ext_resource type="PackedScene" uid="uid://brn0s1jrg4vj0" path="res://Prefabs/BlueShroom.tscn" id="13_s41we"]
 [ext_resource type="PackedScene" uid="uid://ykyqseloq62s" path="res://Prefabs/MovingPlatform.tscn" id="15_gnnhw"]
-[ext_resource type="Script" uid="uid://ur5fxy5jvr5k" path="res://Scripts/KillPlayer.gd" id="16_wpjc4"]
+[ext_resource type="Script" path="res://Scripts/KillPlayer.gd" id="16_wpjc4"]
 [ext_resource type="PackedScene" uid="uid://el6bli7gqrje" path="res://Prefabs/BlueBug.tscn" id="17_crdxt"]
 [ext_resource type="PackedScene" uid="uid://bnjgcrs1fu8lf" path="res://Prefabs/HorrorCentipede.tscn" id="17_ooiku"]
 [ext_resource type="PackedScene" uid="uid://1qi3hvhflads" path="res://Prefabs/Fly.tscn" id="18_hxlu0"]
