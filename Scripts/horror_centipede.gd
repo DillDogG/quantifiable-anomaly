@@ -4,7 +4,7 @@ class_name CentiSegment
 @export var previous: CentiSegment
 @export var speed = 40
 var player: Player
-var applePosition = Vector2(232, -112)
+var applePosition = Vector2(232, 112)
 var forward = Vector2(1, 0)
 var speedMult = 1.0
 var spawnedJams: Array[AnimatedSprite2D]
@@ -31,9 +31,10 @@ func _physics_process(delta):
 		updateForward()
 	else:
 		applePosition = previous.applePosition
+		speedMult += 0.05
 		updateForward()
 	updateAppleForward()
-	print(position)
+	if previous == null: print(position)
 
 func updateAppleForward():
 	if applePosition.x == round(position.x):
