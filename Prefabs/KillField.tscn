@@ -26,7 +26,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_emehh"]
-size = Vector2(16, 16)
+size = Vector2(16, 14)
 
 [node name="KillField" type="Area2D"]
 script = ExtResource("1_6tawd")
