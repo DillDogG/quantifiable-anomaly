@@ -9,7 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://bs4ntf7pusadm" path="res://Assets/dirt-tileset.png" id="7_1apgh"]
 [ext_resource type="PackedScene" uid="uid://6nfewtt8h4rb" path="res://Prefabs/PushableBox.tscn" id="8_ue4po"]
 [ext_resource type="PackedScene" path="res://Prefabs/Switch.tscn" id="9_uoomo"]
-[ext_resource type="PackedScene" uid="uid://doax28hy0wkcw" path="res://Prefabs/Door.tscn" id="10_4jqg0"]
+[ext_resource type="PackedScene" uid="uid://c4m4pm15wej5p" path="res://Prefabs/Door.tscn" id="10_4jqg0"]
 [ext_resource type="PackedScene" uid="uid://dn5vsw2y0468s" path="res://Prefabs/TallShroom.tscn" id="11_7k4fu"]
 [ext_resource type="PackedScene" uid="uid://be8xmapaiperu" path="res://Prefabs/PosterShroom.tscn" id="12_tp0ft"]
 [ext_resource type="PackedScene" uid="uid://brn0s1jrg4vj0" path="res://Prefabs/BlueShroom.tscn" id="13_yjaoa"]

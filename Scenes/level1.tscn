@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://6nfewtt8h4rb" path="res://Prefabs/PushableBox.tscn" id="7_bdr3p"]
 [ext_resource type="PackedScene" path="res://Prefabs/Switch.tscn" id="8_wwu6c"]
 [ext_resource type="PackedScene" uid="uid://crfgbkakysfsk" path="res://Prefabs/CuteCentipedeHead.tscn" id="9_jgkgd"]
-[ext_resource type="PackedScene" uid="uid://doax28hy0wkcw" path="res://Prefabs/Door.tscn" id="9_yymuf"]
+[ext_resource type="PackedScene" uid="uid://c4m4pm15wej5p" path="res://Prefabs/Door.tscn" id="9_yymuf"]
 [ext_resource type="PackedScene" uid="uid://brn0s1jrg4vj0" path="res://Prefabs/BlueShroom.tscn" id="10_bs12r"]
 [ext_resource type="PackedScene" uid="uid://dn5vsw2y0468s" path="res://Prefabs/TallShroom.tscn" id="10_d1mwp"]
 [ext_resource type="PackedScene" uid="uid://be8xmapaiperu" path="res://Prefabs/PosterShroom.tscn" id="11_u1b78"]
