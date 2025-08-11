@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://6nfewtt8h4rb"]
 
-[ext_resource type="Script" uid="uid://dvhlqbfuegkvv" path="res://Scripts/pushable-box.gd" id="1_rndkq"]
+[ext_resource type="Script" path="res://Scripts/pushable-box.gd" id="1_rndkq"]
 [ext_resource type="Texture2D" uid="uid://ogx8lmj8p3b" path="res://Assets/crate.png" id="1_wtr30"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_rndkq"]

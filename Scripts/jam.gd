@@ -1,6 +1,7 @@
 extends Area2D
 
 var animator
+@export var levelPath: String
 
 func _ready():
 	animator = $AnimatedSprite2D
@@ -8,4 +9,4 @@ func _ready():
 
 
 func _on_body_entered(body: Player) -> void:
-	print("Level Complete")
+	get_tree().change_scene_to_file(levelPath)
