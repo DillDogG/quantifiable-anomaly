@@ -1,30 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://b3q0gq2qln0g5"]
+[gd_scene load_steps=7 format=3 uid="uid://b3q0gq2qln0g5"]
 
+[ext_resource type="Script" uid="uid://c523tl7jb7i4f" path="res://Scripts/jam.gd" id="1_0ikjc"]
 [ext_resource type="Texture2D" uid="uid://dfbnfbl0ig3sy" path="res://Assets/jam.png" id="1_m63wy"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gsx1b"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_m63wy"]
 atlas = ExtResource("1_m63wy")
-region = Rect2(0, 0, 16, 16)
+region = Rect2(0, 16, 16, 16)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_muutw"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_0ikjc"]
 atlas = ExtResource("1_m63wy")
-region = Rect2(16, 0, 16, 16)
+region = Rect2(16, 16, 16, 16)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_oty08"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_uj1hj"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gsx1b")
+"texture": SubResource("AtlasTexture_m63wy")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_muutw")
+"texture": SubResource("AtlasTexture_0ikjc")
 }],
 "loop": true,
 "name": &"default",
 "speed": 2.0
 }]
 
-[node name="Jam" type="AnimatedSprite2D" groups=["evil_jam"]]
-sprite_frames = SubResource("SpriteFrames_oty08")
-autoplay = "default"
-frame_progress = 0.271286
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tg71p"]
+size = Vector2(12, 16)
+
+[node name="EvilJam" type="Area2D" groups=["evil_jam"]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource("1_0ikjc")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_uj1hj")
+frame_progress = 0.731814
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_tg71p")

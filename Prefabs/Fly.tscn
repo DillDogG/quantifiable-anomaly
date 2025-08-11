@@ -1,0 +1,65 @@
+[gd_scene load_steps=10 format=3 uid="uid://1qi3hvhflads"]
+
+[ext_resource type="Script" uid="uid://dudom2pvn3ci" path="res://Scripts/fly.gd" id="1_lmcs7"]
+[ext_resource type="Texture2D" uid="uid://dm8stn47rk7pi" path="res://Assets/flyBug.png" id="1_tbgck"]
+[ext_resource type="Texture2D" uid="uid://k0uqs5kchi7a" path="res://Assets/corruptedFlyBug.png" id="2_sqtgv"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwmi4"]
+atlas = ExtResource("2_sqtgv")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f7rrj"]
+atlas = ExtResource("2_sqtgv")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmcs7"]
+atlas = ExtResource("1_tbgck")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqtgv"]
+atlas = ExtResource("1_tbgck")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lwmi4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwmi4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f7rrj")
+}],
+"loop": true,
+"name": &"evil_idle",
+"speed": 15.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmcs7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sqtgv")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 15.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f7rrj"]
+size = Vector2(11, 16)
+
+[node name="Fly" type="RigidBody2D"]
+collision_layer = 16
+collision_mask = 16
+lock_rotation = true
+custom_integrator = true
+script = ExtResource("1_lmcs7")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_lwmi4")
+animation = &"evil_idle"
+frame_progress = 0.901717
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_f7rrj")
