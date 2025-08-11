@@ -19,8 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://el6bli7gqrje" path="res://Prefabs/BlueBug.tscn" id="18_051s1"]
 [ext_resource type="PackedScene" uid="uid://b3q0gq2qln0g5" path="res://Prefabs/Evil_Jam.tscn" id="19_051s1"]
 [ext_resource type="PackedScene" uid="uid://1qi3hvhflads" path="res://Prefabs/Fly.tscn" id="19_in4v8"]
-[ext_resource type="PackedScene" path="res://Prefabs/DialogueBox.tscn" id="20_in4v8"]
-[ext_resource type="PackedScene" uid="uid://dh3tviw2pt06r" path="res://Prefabs/BoxPushArea.tscn" id="21_mu7lp"]
+[ext_resource type="PackedScene" uid="uid://drie5rivmdsh3" path="res://Prefabs/DialogueBox.tscn" id="20_in4v8"]
+[ext_resource type="PackedScene" uid="uid://cn3hgoe21me7y" path="res://Prefabs/BoxPushArea.tscn" id="21_mu7lp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qla6v"]
 texture = ExtResource("7_1apgh")
@@ -66,6 +66,7 @@ size = Vector2(2419, 20)
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_orbd0")
 autoplay = true
+parameters/looping = true
 
 [node name="Background" type="Control" parent="."]
 z_index = -2

@@ -16,11 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://brn0s1jrg4vj0" path="res://Prefabs/BlueShroom.tscn" id="13_s41we"]
 [ext_resource type="PackedScene" uid="uid://ykyqseloq62s" path="res://Prefabs/MovingPlatform.tscn" id="15_gnnhw"]
 [ext_resource type="Script" uid="uid://ur5fxy5jvr5k" path="res://Scripts/KillPlayer.gd" id="16_wpjc4"]
-[ext_resource type="PackedScene" path="res://Prefabs/BlueBugEVIL.tscn" id="17_nesy5"]
+[ext_resource type="PackedScene" uid="uid://chppse55dqwkh" path="res://Prefabs/BlueBugEVIL.tscn" id="17_nesy5"]
 [ext_resource type="PackedScene" uid="uid://bnjgcrs1fu8lf" path="res://Prefabs/HorrorCentipede.tscn" id="17_ooiku"]
 [ext_resource type="PackedScene" uid="uid://1qi3hvhflads" path="res://Prefabs/Fly.tscn" id="18_hxlu0"]
 [ext_resource type="PackedScene" uid="uid://b3q0gq2qln0g5" path="res://Prefabs/Evil_Jam.tscn" id="19_8c33d"]
-[ext_resource type="PackedScene" path="res://Prefabs/DialogueBox.tscn" id="21_e1ips"]
+[ext_resource type="PackedScene" uid="uid://drie5rivmdsh3" path="res://Prefabs/DialogueBox.tscn" id="21_e1ips"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qla6v"]
 texture = ExtResource("7_evoni")
