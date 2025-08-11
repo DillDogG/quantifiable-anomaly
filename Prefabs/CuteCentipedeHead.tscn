@@ -28,7 +28,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j00xv"]
 size = Vector2(32, 16)
 
-[node name="CuteCentipedeHead" type="RigidBody2D"]
+[node name="CuteCentipedeHead" type="RigidBody2D" groups=["cute"]]
 position = Vector2(31, 21)
 collision_layer = 8
 collision_mask = 8
@@ -45,3 +45,5 @@ frame_progress = 0.624279
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 0)
 shape = SubResource("RectangleShape2D_j00xv")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
