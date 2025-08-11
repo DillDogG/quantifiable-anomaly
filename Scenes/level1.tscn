@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c36eedtv4umql" path="res://Scenes/player.tscn" id="5_d1mwp"]
 [ext_resource type="Texture2D" uid="uid://bs4ntf7pusadm" path="res://Assets/dirt-tileset.png" id="6_u1b78"]
 [ext_resource type="PackedScene" uid="uid://6nfewtt8h4rb" path="res://Prefabs/PushableBox.tscn" id="7_bdr3p"]
-[ext_resource type="PackedScene" path="res://Prefabs/Switch.tscn" id="8_wwu6c"]
+[ext_resource type="PackedScene" uid="uid://bbjmtjfauwneq" path="res://Prefabs/Switch.tscn" id="8_wwu6c"]
 [ext_resource type="PackedScene" uid="uid://crfgbkakysfsk" path="res://Prefabs/CuteCentipedeHead.tscn" id="9_jgkgd"]
 [ext_resource type="PackedScene" uid="uid://c4m4pm15wej5p" path="res://Prefabs/Door.tscn" id="9_yymuf"]
 [ext_resource type="PackedScene" uid="uid://brn0s1jrg4vj0" path="res://Prefabs/BlueShroom.tscn" id="10_bs12r"]
@@ -15,7 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://c6ytsuvueein8" path="res://Prefabs/GreenShroom.tscn" id="13_bdr3p"]
 [ext_resource type="Script" uid="uid://663g4s8ppdyr" path="res://Scripts/centipede-spawner.gd" id="14_wwu6c"]
 [ext_resource type="PackedScene" uid="uid://ykyqseloq62s" path="res://Prefabs/MovingPlatform.tscn" id="15_bdr3p"]
-[ext_resource type="Script" path="res://Scripts/KillPlayer.gd" id="16_wwu6c"]
+[ext_resource type="Script" uid="uid://ur5fxy5jvr5k" path="res://Scripts/KillPlayer.gd" id="16_wwu6c"]
 [ext_resource type="PackedScene" uid="uid://c8gyhl35pcxmi" path="res://Prefabs/Jam.tscn" id="17_yymuf"]
 [ext_resource type="PackedScene" uid="uid://el6bli7gqrje" path="res://Prefabs/BlueBug.tscn" id="18_esggg"]
 [ext_resource type="PackedScene" uid="uid://1qi3hvhflads" path="res://Prefabs/Fly.tscn" id="19_nolpu"]
@@ -59,7 +59,7 @@ b = Vector2(368, 176)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yymuf"]
 size = Vector2(2419, 20)
 
-[node name="MainGameScene2" type="Node2D"]
+[node name="MainGameScene3" type="Node2D"]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_cpkqv")
