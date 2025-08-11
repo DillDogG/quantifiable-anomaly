@@ -1,31 +1,32 @@
-[gd_scene load_steps=12 format=3 uid="uid://el6bli7gqrje"]
+[gd_scene load_steps=14 format=3 uid="uid://chppse55dqwkh"]
 
-[ext_resource type="Script" uid="uid://daa3s0bxy16h4" path="res://Scripts/blue-bug.gd" id="1_dqbcv"]
-[ext_resource type="Texture2D" uid="uid://cfx6m7v8wxviu" path="res://Assets/blueBug.png" id="1_e43q1"]
-[ext_resource type="Texture2D" uid="uid://bwahu0nbruywd" path="res://Assets/corruptedBlueBug.png" id="2_j0aqq"]
+[ext_resource type="Script" uid="uid://daa3s0bxy16h4" path="res://Scripts/blue-bug.gd" id="1_pm6ka"]
+[ext_resource type="Texture2D" uid="uid://bwahu0nbruywd" path="res://Assets/corruptedBlueBug.png" id="2_3exot"]
+[ext_resource type="Texture2D" uid="uid://cfx6m7v8wxviu" path="res://Assets/blueBug.png" id="3_317so"]
+[ext_resource type="Script" uid="uid://ur5fxy5jvr5k" path="res://Scripts/KillPlayer.gd" id="4_3exot"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7uen1"]
-atlas = ExtResource("2_j0aqq")
+atlas = ExtResource("2_3exot")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v76db"]
-atlas = ExtResource("2_j0aqq")
+atlas = ExtResource("2_3exot")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dqbcv"]
-atlas = ExtResource("1_e43q1")
+atlas = ExtResource("3_317so")
 region = Rect2(0, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_j0aqq"]
-atlas = ExtResource("1_e43q1")
+atlas = ExtResource("3_317so")
 region = Rect2(32, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xhxa7"]
-atlas = ExtResource("2_j0aqq")
+atlas = ExtResource("2_3exot")
 region = Rect2(64, 0, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1wdrb"]
-atlas = ExtResource("2_j0aqq")
+atlas = ExtResource("2_3exot")
 region = Rect2(96, 0, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_7uen1"]
@@ -67,10 +68,14 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v76db"]
 size = Vector2(32, 24)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_317so"]
+size = Vector2(20, 14)
+
 [node name="BlueBug" type="RigidBody2D"]
-collision_layer = 4
-collision_mask = 4
-script = ExtResource("1_dqbcv")
+collision_layer = 32
+collision_mask = 32
+script = ExtResource("1_pm6ka")
+evil = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7uen1")
@@ -80,3 +85,11 @@ frame_progress = 0.575277
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 4)
 shape = SubResource("RectangleShape2D_v76db")
+
+[node name="Area2D" type="Area2D" parent="."]
+script = ExtResource("4_3exot")
+isHidable = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 9)
+shape = SubResource("RectangleShape2D_317so")

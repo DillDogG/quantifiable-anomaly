@@ -16,7 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://c6ytsuvueein8" path="res://Prefabs/GreenShroom.tscn" id="14_1alju"]
 [ext_resource type="PackedScene" uid="uid://ykyqseloq62s" path="res://Prefabs/MovingPlatform.tscn" id="15_5v8i3"]
 [ext_resource type="Script" uid="uid://ur5fxy5jvr5k" path="res://Scripts/KillPlayer.gd" id="16_tsss4"]
-[ext_resource type="PackedScene" uid="uid://el6bli7gqrje" path="res://Prefabs/BlueBug.tscn" id="17_s5d5r"]
+[ext_resource type="PackedScene" uid="uid://chppse55dqwkh" path="res://Prefabs/BlueBugEVIL.tscn" id="17_p2sx0"]
 [ext_resource type="PackedScene" uid="uid://1qi3hvhflads" path="res://Prefabs/Fly.tscn" id="18_06tg8"]
 [ext_resource type="PackedScene" uid="uid://b3q0gq2qln0g5" path="res://Prefabs/Evil_Jam.tscn" id="19_fgdcu"]
 
@@ -94,7 +94,7 @@ texture = ExtResource("2_tc3ri")
 expand_mode = 2
 
 [node name="Player" parent="." instance=ExtResource("3_3nkac")]
-position = Vector2(89, 140)
+position = Vector2(1200, 225)
 push_force = 400
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -116,8 +116,8 @@ tile_map_data = PackedByteArray("AAAAAAoAAAAAAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAA
 tile_set = SubResource("TileSet_undaa")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 23
-collision_mask = 23
+collision_layer = 55
+collision_mask = 55
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(0, 48, 0, 176, 48, 176, 79, 192, 176, 192, 176, 176, 144, 176, 144, 160, 16, 160, 16, 48)
@@ -301,49 +301,24 @@ position = Vector2(-137, 32)
 rotation = 3.14159
 deactivatable = true
 
-[node name="BlueBug" parent="." instance=ExtResource("17_s5d5r")]
+[node name="BlueBug6" parent="." instance=ExtResource("17_p2sx0")]
 position = Vector2(1244, 128)
-evil = true
 
-[node name="BlueBug4" parent="." instance=ExtResource("17_s5d5r")]
+[node name="BlueBug" parent="." instance=ExtResource("17_p2sx0")]
 position = Vector2(1775, 144)
-collision_mask = 4
-evil = true
 
-[node name="BlueBug5" parent="." instance=ExtResource("17_s5d5r")]
+[node name="BlueBug4" parent="." instance=ExtResource("17_p2sx0")]
 position = Vector2(1663, 224)
-evil = true
-
-[node name="BlueBug2" parent="." instance=ExtResource("17_s5d5r")]
-position = Vector2(1291, 48)
-evil = true
-
-[node name="BlueBug3" parent="." instance=ExtResource("17_s5d5r")]
-position = Vector2(1302, 304)
-evil = true
-
-[node name="Fly" parent="." instance=ExtResource("18_06tg8")]
-position = Vector2(712, 309)
-evil = true
 
 [node name="Fly4" parent="." instance=ExtResource("18_06tg8")]
 position = Vector2(1672, 120)
 evil = true
 horizontal = true
 
-[node name="Fly5" parent="." instance=ExtResource("18_06tg8")]
-position = Vector2(1624, 152)
-timerSetMove = 2
-evil = true
-horizontal = true
-
-[node name="Fly6" parent="." instance=ExtResource("18_06tg8")]
-position = Vector2(1688, 184)
-evil = true
-horizontal = true
-
 [node name="Fly2" parent="." instance=ExtResource("18_06tg8")]
 position = Vector2(1111, 125)
+move_speed = 125
+timerSetMove = 1
 evil = true
 
 [node name="Fly3" parent="." instance=ExtResource("18_06tg8")]
@@ -353,3 +328,9 @@ evil = true
 [node name="Jam" parent="." instance=ExtResource("19_fgdcu")]
 position = Vector2(1832, 200)
 levelPath = "res://Scenes/level4.tscn"
+
+[node name="Fly5" parent="." instance=ExtResource("18_06tg8")]
+position = Vector2(1629, 153)
+move_speed = -100
+evil = true
+horizontal = true

@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://brn0s1jrg4vj0" path="res://Prefabs/BlueShroom.tscn" id="13_s41we"]
 [ext_resource type="PackedScene" uid="uid://ykyqseloq62s" path="res://Prefabs/MovingPlatform.tscn" id="15_gnnhw"]
 [ext_resource type="Script" uid="uid://ur5fxy5jvr5k" path="res://Scripts/KillPlayer.gd" id="16_wpjc4"]
-[ext_resource type="PackedScene" uid="uid://el6bli7gqrje" path="res://Prefabs/BlueBug.tscn" id="17_crdxt"]
+[ext_resource type="PackedScene" uid="uid://chppse55dqwkh" path="res://Prefabs/BlueBugEVIL.tscn" id="17_nesy5"]
 [ext_resource type="PackedScene" uid="uid://bnjgcrs1fu8lf" path="res://Prefabs/HorrorCentipede.tscn" id="17_ooiku"]
 [ext_resource type="PackedScene" uid="uid://1qi3hvhflads" path="res://Prefabs/Fly.tscn" id="18_hxlu0"]
 [ext_resource type="PackedScene" uid="uid://b3q0gq2qln0g5" path="res://Prefabs/Evil_Jam.tscn" id="19_8c33d"]
@@ -337,10 +337,6 @@ connectedObjects = [NodePath("Door")]
 position = Vector2(96, -32)
 deactivatable = true
 
-[node name="BlueBug" parent="." instance=ExtResource("17_crdxt")]
-position = Vector2(1360, 512)
-evil = true
-
 [node name="Fly2" parent="." instance=ExtResource("18_hxlu0")]
 position = Vector2(968, 505)
 timerSet = 0
@@ -354,3 +350,6 @@ timerSetMove = 4
 evil = true
 
 [node name="HorrorCentipede" parent="." instance=ExtResource("17_ooiku")]
+
+[node name="BlueBug" parent="." instance=ExtResource("17_nesy5")]
+position = Vector2(1360, 512)

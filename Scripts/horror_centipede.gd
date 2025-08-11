@@ -2,7 +2,7 @@ extends Node2D
 class_name CentiSegment
 
 @export var previous: CentiSegment
-@export var speed = 40
+@export var speed = 45
 var player: Player
 var applePosition = Vector2(232, 112)
 var forward = Vector2(1, 0)
