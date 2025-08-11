@@ -28,7 +28,7 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lbmdu"]
 size = Vector2(31, 16)
 
-[node name="CuteCentipedeBody" type="RigidBody2D"]
+[node name="CuteCentipedeBody" type="RigidBody2D" groups=["cute"]]
 z_index = -2
 collision_layer = 8
 collision_mask = 8
