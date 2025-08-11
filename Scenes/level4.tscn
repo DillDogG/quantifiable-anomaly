@@ -346,6 +346,18 @@ timerSet = 0
 timerSetMove = 4
 evil = true
 
+[node name="Fly4" parent="." instance=ExtResource("18_hxlu0")]
+position = Vector2(967, 743)
+timerSet = 0
+timerSetMove = 4
+evil = true
+
+[node name="Fly5" parent="." instance=ExtResource("18_hxlu0")]
+position = Vector2(1031, 744)
+timerSet = 0
+timerSetMove = 4
+evil = true
+
 [node name="Fly3" parent="." instance=ExtResource("18_hxlu0")]
 position = Vector2(1032, 504)
 timerSet = 0

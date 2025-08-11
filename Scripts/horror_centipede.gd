@@ -34,7 +34,6 @@ func _physics_process(delta):
 		speedMult += 0.05
 		updateForward()
 	updateAppleForward()
-	if previous == null: print(position)
 
 func updateAppleForward():
 	if applePosition.x == round(position.x):
