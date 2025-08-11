@@ -34,8 +34,11 @@ func _physics_process(delta):
 		velocity.y = gravity.y * 0.01667 * 20
 	read_input()
 	if abs(velocity.x) > 0:
-		animator.play("run")
+		if Input.is_action_pressed("hide"): animator.play("hidden-run")
+		else: animator.play("run")
 		animator.flip_h = velocity.x < 0
+	elif Input.is_action_pressed("hide"):
+		animator.play("hidden-idle")
 	else:
 		animator.play("idle")
 	move_and_slide()

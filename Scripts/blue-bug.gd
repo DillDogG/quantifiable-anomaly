@@ -2,6 +2,7 @@ extends RigidBody2D
 
 var animator
 @export var evil = false
+@export var speed = 50
 var player: Player
 
 func _ready():
@@ -14,7 +15,9 @@ func _ready():
 
 func _physics_process(delta):
 	if not evil and not Input.is_action_pressed("hide"): return
-	if evil and player.global_position.y < global_position.y + 5 and player.global_position.y > global_position.y - 5 and player.global_position.x < global_position.x + 15:
-		apply_central_impulse(Vector2(-50, 5))
-	elif evil and player.global_position.y < global_position.y + 5 and player.global_position.y > global_position.y - 5 and player.global_position.x > global_position.x - 15:
-		apply_central_impulse(Vector2(50, 5))
+	if evil and player.global_position.y < global_position.y + 5 and player.global_position.y > global_position.y - 5 and player.global_position.x < global_position.x + 100 and player.global_position.x > global_position.x - 100:
+		$ActivateSound.play()
+		if player.global_position.x < global_position.x + 100 and not player.global_position.x < global_position.x:
+			apply_central_impulse(Vector2(speed, 5))
+		else:
+			apply_central_impulse(Vector2(-speed, 5))

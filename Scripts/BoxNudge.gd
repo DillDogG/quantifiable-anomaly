@@ -7,10 +7,11 @@ extends Area2D
 
 func _physics_process(delta):
 	for object: Node in get_overlapping_bodies():
-		if object is RigidBody2D:
+		if object is RigidBody2D and object.is_in_group("box"):
 			object.apply_central_impulse(pushDir * pushForce)
-			if emergencyBox != null and object.is_in_group("box"):
+			if emergencyBox != null:
 				var boxInstance = emergencyBox.instantiate()
 				boxInstance.global_position = boxSpot
 				get_tree().root.get_child(0).add_child.call_deferred(boxInstance)
 				object.queue_free()
+				print("deleted object")

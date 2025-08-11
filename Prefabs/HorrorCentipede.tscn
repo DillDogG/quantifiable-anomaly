@@ -153,14 +153,28 @@ previous = NodePath("../../NodeHead")
 [node name="Node2D2" type="Node2D" parent="NodeBodies" node_paths=PackedStringArray("previous")]
 position = Vector2(-64, 0)
 script = ExtResource("1_fhbac")
-previous = NodePath("../../NodeHead")
+previous = NodePath("../Node2D")
 
 [node name="AnimatedSprite2D(Segment)" parent="NodeBodies/Node2D2" instance=ExtResource("2_6mbke")]
 
-[node name="NodeTail" type="Node2D" parent="." node_paths=PackedStringArray("previous")]
+[node name="Node2D3" type="Node2D" parent="NodeBodies" node_paths=PackedStringArray("previous")]
 position = Vector2(-96, 0)
 script = ExtResource("1_fhbac")
-previous = NodePath("../NodeBodies/Node2D")
+previous = NodePath("../Node2D2")
+
+[node name="AnimatedSprite2D(Segment)" parent="NodeBodies/Node2D3" instance=ExtResource("2_6mbke")]
+
+[node name="Node2D4" type="Node2D" parent="NodeBodies" node_paths=PackedStringArray("previous")]
+position = Vector2(-128, 0)
+script = ExtResource("1_fhbac")
+previous = NodePath("../Node2D3")
+
+[node name="AnimatedSprite2D(Segment)" parent="NodeBodies/Node2D4" instance=ExtResource("2_6mbke")]
+
+[node name="NodeTail" type="Node2D" parent="." node_paths=PackedStringArray("previous")]
+position = Vector2(-160, 0)
+script = ExtResource("1_fhbac")
+previous = NodePath("../NodeBodies/Node2D4")
 
 [node name="AnimatedSprite2D(Tail)" type="AnimatedSprite2D" parent="NodeTail"]
 sprite_frames = SubResource("SpriteFrames_qi70u")
