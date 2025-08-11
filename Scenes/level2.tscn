@@ -333,5 +333,5 @@ position = Vector2(1111, 125)
 position = Vector2(1400, 152)
 
 [node name="Jam" parent="." instance=ExtResource("19_051s1")]
-position = Vector2(1832, 200)
+position = Vector2(1672, 88)
 levelPath = "res://Scenes/level3.tscn"

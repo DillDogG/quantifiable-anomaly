@@ -1,8 +1,11 @@
 [gd_scene load_steps=22 format=4 uid="uid://dp07p1ncdbu2a"]
 
+[ext_resource type="Script" uid="uid://cx7yrvhi2p6qj" path="res://Scripts/music.gd" id="1_nesy5"]
 [ext_resource type="AudioStream" uid="uid://dqvfn2ttu6eld" path="res://Audio/calmTheme.mp3" id="1_xhya1"]
 [ext_resource type="Texture2D" uid="uid://vmaykyfxmemh" path="res://Assets/background.png" id="2_we22d"]
 [ext_resource type="PackedScene" uid="uid://c36eedtv4umql" path="res://Scenes/player.tscn" id="3_e1ips"]
+[ext_resource type="AudioStream" uid="uid://vuc1iis1hxa2" path="res://Audio/centipedeIntro.mp3" id="3_we22d"]
+[ext_resource type="AudioStream" uid="uid://ipf0mtcewqdu" path="res://Audio/centipedeMain.mp3" id="4_e1ips"]
 [ext_resource type="PackedScene" uid="uid://08qqblmyisoh" path="res://UI/ConsoleUI.tscn" id="4_n4fv4"]
 [ext_resource type="Script" uid="uid://663g4s8ppdyr" path="res://Scripts/centipede-spawner.gd" id="5_bkb0e"]
 [ext_resource type="PackedScene" uid="uid://crfgbkakysfsk" path="res://Prefabs/CuteCentipedeHead.tscn" id="6_81lxm"]
@@ -58,10 +61,17 @@ b = Vector2(368, 176)
 size = Vector2(2419, 20)
 
 [node name="MainGameScene" type="Node2D"]
+script = ExtResource("1_nesy5")
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_xhya1")
-autoplay = true
+
+[node name="Intro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_we22d")
+
+[node name="Centipede" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_e1ips")
+parameters/looping = true
 
 [node name="Background" type="Control" parent="."]
 z_index = -2

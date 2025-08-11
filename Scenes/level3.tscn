@@ -244,15 +244,18 @@ dead = true
 
 [node name="MovingPlatform" parent="." instance=ExtResource("15_5v8i3")]
 position = Vector2(816, 200)
+lock_rotation = true
 timerSetMove = 4
 corrupt = true
 
 [node name="MovingPlatform2" parent="." instance=ExtResource("15_5v8i3")]
 position = Vector2(832, 296)
+lock_rotation = true
 corrupt = true
 
 [node name="MovingPlatform3" parent="." instance=ExtResource("15_5v8i3")]
 position = Vector2(1457, 104)
+lock_rotation = true
 corrupt = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
