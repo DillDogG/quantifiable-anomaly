@@ -7,6 +7,7 @@ class_name Player
 @onready var jam = preload("res://Prefabs/Evil_Jam.tscn")
 var gravity
 var animator: AnimatedSprite2D
+var coyoteTime = 0.0
 
 func _ready() -> void:
 	animator = $AnimatedSprite2D
@@ -19,8 +20,12 @@ func read_input():
 func _physics_process(delta):
 	gravity = get_gravity()
 	velocity.y += (gravity.y * delta) / 3
-	if Input.is_action_pressed("jump") and is_on_floor():
+	coyoteTime -= delta
+	if is_on_floor():
+		coyoteTime = 0.25
+	if Input.is_action_pressed("jump") and coyoteTime > 0:
 		velocity.y = -jump_force
+		coyoteTime = 0
 	if Input.is_action_just_released("jump") and velocity.y < 0:
 		velocity.y /= 2
 	if velocity.y > gravity.y * 0.01667 * 20:
