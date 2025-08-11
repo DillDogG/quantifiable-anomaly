@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://dkgjms2w01c0r"]
+[gd_scene load_steps=15 format=4 uid="uid://dkgjms2w01c0r"]
 
 [ext_resource type="PackedScene" uid="uid://08qqblmyisoh" path="res://UI/ConsoleUI.tscn" id="1_cp132"]
 [ext_resource type="PackedScene" uid="uid://c36eedtv4umql" path="res://Scenes/player.tscn" id="2_2axvc"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bbjmtjfauwneq" path="res://Prefabs/Switch.tscn" id="5_undaa"]
 [ext_resource type="PackedScene" uid="uid://c4m4pm15wej5p" path="res://Prefabs/Door.tscn" id="8_tgp8p"]
 [ext_resource type="PackedScene" uid="uid://bnjgcrs1fu8lf" path="res://Prefabs/HorrorCentipede.tscn" id="9_7hgva"]
+[ext_resource type="PackedScene" uid="uid://c8gyhl35pcxmi" path="res://Prefabs/Jam.tscn" id="10_uk12x"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qla6v"]
 texture = ExtResource("3_7px2j")
@@ -132,3 +133,7 @@ position = Vector2(257, 152)
 
 [node name="Door3" parent="." instance=ExtResource("8_tgp8p")]
 position = Vector2(257, 136)
+
+[node name="Jam" parent="." instance=ExtResource("10_uk12x")]
+position = Vector2(162, 115)
+levelPath = "res://Scenes/level1.tscn"
