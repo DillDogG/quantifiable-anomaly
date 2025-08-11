@@ -17,6 +17,8 @@ func _ready():
 		animator.play("idle")
 	else:
 		animator.play("evil_idle")
+		var glitchInstance = glitchScene.instantiate()
+		add_child(glitchInstance)
 	
 
 func _physics_process(delta):
@@ -26,9 +28,7 @@ func _physics_process(delta):
 			linear_velocity.y = move_speed
 		else:
 			linear_velocity.x = move_speed
-		if evil == true:
-			var glitchInstance = glitchScene.instantiate()
-			add_child(glitchInstance)
+		
 		timerWalk -= delta
 		if timerWalk <= 0:
 			timerWalk = timerSetMove

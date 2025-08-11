@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://dh3tviw2pt06r"]
+[gd_scene load_steps=3 format=3 uid="uid://cn3hgoe21me7y"]
 
-[ext_resource type="Script" path="res://Scripts/BoxNudge.gd" id="1_qs5ea"]
+[ext_resource type="Script" uid="uid://c8anroe8dsq3r" path="res://Scripts/BoxNudge.gd" id="1_qs5ea"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5lm8e"]
 

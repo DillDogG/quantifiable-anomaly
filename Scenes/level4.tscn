@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=4 uid="uid://dp07p1ncdbu2a"]
+[gd_scene load_steps=26 format=4 uid="uid://dp07p1ncdbu2a"]
 
 [ext_resource type="Script" uid="uid://cx7yrvhi2p6qj" path="res://Scripts/music.gd" id="1_nesy5"]
 [ext_resource type="AudioStream" uid="uid://dqvfn2ttu6eld" path="res://Audio/calmTheme.mp3" id="1_xhya1"]
@@ -15,11 +15,12 @@
 [ext_resource type="PackedScene" uid="uid://c8gyhl35pcxmi" path="res://Prefabs/Jam.tscn" id="11_lhhwt"]
 [ext_resource type="PackedScene" uid="uid://brn0s1jrg4vj0" path="res://Prefabs/BlueShroom.tscn" id="13_s41we"]
 [ext_resource type="PackedScene" uid="uid://ykyqseloq62s" path="res://Prefabs/MovingPlatform.tscn" id="15_gnnhw"]
-[ext_resource type="Script" path="res://Scripts/KillPlayer.gd" id="16_wpjc4"]
-[ext_resource type="PackedScene" uid="uid://el6bli7gqrje" path="res://Prefabs/BlueBug.tscn" id="17_crdxt"]
+[ext_resource type="Script" uid="uid://ur5fxy5jvr5k" path="res://Scripts/KillPlayer.gd" id="16_wpjc4"]
+[ext_resource type="PackedScene" uid="uid://chppse55dqwkh" path="res://Prefabs/BlueBugEVIL.tscn" id="17_nesy5"]
 [ext_resource type="PackedScene" uid="uid://bnjgcrs1fu8lf" path="res://Prefabs/HorrorCentipede.tscn" id="17_ooiku"]
 [ext_resource type="PackedScene" uid="uid://1qi3hvhflads" path="res://Prefabs/Fly.tscn" id="18_hxlu0"]
 [ext_resource type="PackedScene" uid="uid://b3q0gq2qln0g5" path="res://Prefabs/Evil_Jam.tscn" id="19_8c33d"]
+[ext_resource type="PackedScene" uid="uid://drie5rivmdsh3" path="res://Prefabs/DialogueBox.tscn" id="21_e1ips"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qla6v"]
 texture = ExtResource("7_evoni")
@@ -110,6 +111,10 @@ push_force = 400
 
 [node name="ConsoleUi" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("4_n4fv4")]
 
+[node name="RichTextLabel" parent="Player/Camera2D/CanvasLayer/ConsoleUi/ColorRect/ColorRect" index="0"]
+level1 = false
+level4 = true
+
 [node name="CentipedeBodySpawner" type="Node2D" parent="."]
 position = Vector2(111, 159)
 script = ExtResource("5_bkb0e")
@@ -125,8 +130,8 @@ tile_map_data = PackedByteArray("AAAAAAoAAAAAAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAA
 tile_set = SubResource("TileSet_undaa")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 23
-collision_mask = 23
+collision_layer = 55
+collision_mask = 55
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(0, 48, 0, 176, 48, 176, 79, 192, 176, 192, 176, 176, 144, 176, 144, 160, 16, 160, 16, 48)
@@ -299,7 +304,7 @@ position = Vector2(262, 168)
 
 [node name="Jam2" parent="." instance=ExtResource("11_lhhwt")]
 position = Vector2(1656, 504)
-levelPath = "res://Scenes/MainGameScene.tscn"
+levelPath = "res://Scenes/MainMenu.tscn"
 
 [node name="MovingPlatform" parent="." instance=ExtResource("15_gnnhw")]
 position = Vector2(815, 504)
@@ -347,10 +352,6 @@ connectedObjects = [NodePath("Door")]
 position = Vector2(96, -32)
 deactivatable = true
 
-[node name="BlueBug" parent="." instance=ExtResource("17_crdxt")]
-position = Vector2(1360, 512)
-evil = true
-
 [node name="Fly2" parent="." instance=ExtResource("18_hxlu0")]
 position = Vector2(968, 505)
 timerSet = 0
@@ -364,3 +365,32 @@ timerSetMove = 4
 evil = true
 
 [node name="HorrorCentipede" parent="." instance=ExtResource("17_ooiku")]
+
+[node name="BlueBug" parent="." instance=ExtResource("17_nesy5")]
+position = Vector2(1360, 512)
+
+[node name="DialogueBox" parent="." instance=ExtResource("21_e1ips")]
+position = Vector2(464, 547)
+scale = Vector2(10.2833, 23.9778)
+isError = true
+dialogue = "the beast craves JJJAAFDSAMM"
+
+[node name="DialogueBox2" parent="." instance=ExtResource("21_e1ips")]
+position = Vector2(933, 561)
+scale = Vector2(2.87815, 15.4772)
+isDev = true
+dialogue = "That jam seems to be corrupting everything. We've placed some good jam to help you cure everything. I think it ended up at the end of this area. Good luck reaching it."
+
+[node name="DialogueBox3" parent="." instance=ExtResource("21_e1ips")]
+position = Vector2(1585, 781)
+scale = Vector2(2.87815, 2.91721)
+isMessage = true
+dialogue = "Thanaaaank you valood tester quality. Recorded your performace has been recorded for develop teamment"
+
+[node name="DialogueBox4" parent="." instance=ExtResource("21_e1ips")]
+position = Vector2(1451, 546)
+scale = Vector2(2.87815, 2.91721)
+isDev = true
+dialogue = "yyyyyyoour allmmost theher tester. thanks forrr your hepl. that cenentimped will cure everyeyething"
+
+[editable path="Player/Camera2D/CanvasLayer/ConsoleUi"]
