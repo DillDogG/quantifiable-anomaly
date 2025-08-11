@@ -1,10 +1,10 @@
 [gd_scene load_steps=24 format=4 uid="uid://6m3bdt0icae0"]
 
-[ext_resource type="AudioStream" uid="uid://dqvfn2ttu6eld" path="res://Audio/calmTheme.mp3" id="1_p2sx0"]
+[ext_resource type="AudioStream" uid="uid://y3ms781pm04i" path="res://Audio/glitchTheme1.mp3" id="1_tc3ri"]
 [ext_resource type="Texture2D" uid="uid://vmaykyfxmemh" path="res://Assets/background.png" id="2_tc3ri"]
 [ext_resource type="PackedScene" uid="uid://c36eedtv4umql" path="res://Scenes/player.tscn" id="3_3nkac"]
 [ext_resource type="PackedScene" uid="uid://08qqblmyisoh" path="res://UI/ConsoleUI.tscn" id="4_eqm1k"]
-[ext_resource type="Script" path="res://Scripts/centipede-spawner.gd" id="5_d08tm"]
+[ext_resource type="Script" uid="uid://663g4s8ppdyr" path="res://Scripts/centipede-spawner.gd" id="5_d08tm"]
 [ext_resource type="PackedScene" uid="uid://crfgbkakysfsk" path="res://Prefabs/CuteCentipedeHead.tscn" id="6_jfxh1"]
 [ext_resource type="Texture2D" uid="uid://bs4ntf7pusadm" path="res://Assets/dirt-tileset.png" id="7_455hk"]
 [ext_resource type="PackedScene" uid="uid://6nfewtt8h4rb" path="res://Prefabs/PushableBox.tscn" id="8_pdvwv"]
@@ -59,11 +59,12 @@ b = Vector2(368, 176)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yymuf"]
 size = Vector2(2419, 20)
 
-[node name="MainGameScene" type="Node2D"]
+[node name="MainGameScene4" type="Node2D"]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("1_p2sx0")
+stream = ExtResource("1_tc3ri")
 autoplay = true
+parameters/looping = true
 
 [node name="Background" type="Control" parent="."]
 z_index = -2
@@ -352,5 +353,3 @@ evil = true
 [node name="Jam" parent="." instance=ExtResource("19_fgdcu")]
 position = Vector2(1832, 200)
 levelPath = "res://Scenes/level4.tscn"
-
-[node name="HorrorCentipede" parent="." instance=ExtResource("20_tc3ri")]

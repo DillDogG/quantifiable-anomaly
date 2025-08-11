@@ -13,7 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://dn5vsw2y0468s" path="res://Prefabs/TallShroom.tscn" id="10_d1mwp"]
 [ext_resource type="PackedScene" uid="uid://be8xmapaiperu" path="res://Prefabs/PosterShroom.tscn" id="11_u1b78"]
 [ext_resource type="PackedScene" uid="uid://c6ytsuvueein8" path="res://Prefabs/GreenShroom.tscn" id="13_bdr3p"]
-[ext_resource type="Script" path="res://Scripts/centipede-spawner.gd" id="14_wwu6c"]
+[ext_resource type="Script" uid="uid://663g4s8ppdyr" path="res://Scripts/centipede-spawner.gd" id="14_wwu6c"]
 [ext_resource type="PackedScene" uid="uid://ykyqseloq62s" path="res://Prefabs/MovingPlatform.tscn" id="15_bdr3p"]
 [ext_resource type="Script" uid="uid://ur5fxy5jvr5k" path="res://Scripts/KillPlayer.gd" id="16_wwu6c"]
 [ext_resource type="PackedScene" uid="uid://c8gyhl35pcxmi" path="res://Prefabs/Jam.tscn" id="17_yymuf"]
@@ -60,7 +60,7 @@ b = Vector2(368, 176)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yymuf"]
 size = Vector2(2419, 20)
 
-[node name="MainGameScene" type="Node2D"]
+[node name="MainGameScene3" type="Node2D"]
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_cpkqv")
