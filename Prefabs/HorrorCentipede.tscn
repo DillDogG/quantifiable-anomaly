@@ -70,7 +70,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3s6y"]
-size = Vector2(32, 16)
+size = Vector2(24, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fhbac"]
 atlas = ExtResource("1_t47ty")
@@ -137,7 +137,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u7vbp"]
-size = Vector2(32, 16)
+size = Vector2(24, 16)
 
 [node name="HorrorCentipede" type="Node2D"]
 
@@ -150,10 +150,31 @@ previous = NodePath("../../NodeHead")
 
 [node name="AnimatedSprite2D(Segment)" parent="NodeBodies/Node2D" instance=ExtResource("2_6mbke")]
 
-[node name="NodeTail" type="Node2D" parent="." node_paths=PackedStringArray("previous")]
+[node name="Node2D2" type="Node2D" parent="NodeBodies" node_paths=PackedStringArray("previous")]
 position = Vector2(-64, 0)
 script = ExtResource("1_fhbac")
-previous = NodePath("../NodeBodies/Node2D")
+previous = NodePath("../Node2D")
+
+[node name="AnimatedSprite2D(Segment)" parent="NodeBodies/Node2D2" instance=ExtResource("2_6mbke")]
+
+[node name="Node2D3" type="Node2D" parent="NodeBodies" node_paths=PackedStringArray("previous")]
+position = Vector2(-96, 0)
+script = ExtResource("1_fhbac")
+previous = NodePath("../Node2D2")
+
+[node name="AnimatedSprite2D(Segment)" parent="NodeBodies/Node2D3" instance=ExtResource("2_6mbke")]
+
+[node name="Node2D4" type="Node2D" parent="NodeBodies" node_paths=PackedStringArray("previous")]
+position = Vector2(-128, 0)
+script = ExtResource("1_fhbac")
+previous = NodePath("../Node2D3")
+
+[node name="AnimatedSprite2D(Segment)" parent="NodeBodies/Node2D4" instance=ExtResource("2_6mbke")]
+
+[node name="NodeTail" type="Node2D" parent="." node_paths=PackedStringArray("previous")]
+position = Vector2(-160, 0)
+script = ExtResource("1_fhbac")
+previous = NodePath("../NodeBodies/Node2D4")
 
 [node name="AnimatedSprite2D(Tail)" type="AnimatedSprite2D" parent="NodeTail"]
 sprite_frames = SubResource("SpriteFrames_qi70u")
@@ -164,6 +185,7 @@ frame_progress = 0.421723
 script = ExtResource("4_h3s6y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NodeTail/AnimatedSprite2D(Tail)/Area2D"]
+position = Vector2(4, 0)
 shape = SubResource("RectangleShape2D_h3s6y")
 
 [node name="NodeHead" type="Node2D" parent="."]
@@ -180,5 +202,5 @@ position = Vector2(-32, 0)
 script = ExtResource("4_h3s6y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="NodeHead/AnimatedSprite2D(Head)/Area2D"]
-position = Vector2(32, 0)
+position = Vector2(28, 0)
 shape = SubResource("RectangleShape2D_u7vbp")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://6m3bdt0icae0"]
+[gd_scene load_steps=26 format=4 uid="uid://6m3bdt0icae0"]
 
 [ext_resource type="AudioStream" uid="uid://y3ms781pm04i" path="res://Audio/glitchTheme1.mp3" id="1_tc3ri"]
 [ext_resource type="Texture2D" uid="uid://vmaykyfxmemh" path="res://Assets/background.png" id="2_tc3ri"]
@@ -16,9 +16,11 @@
 [ext_resource type="PackedScene" uid="uid://c6ytsuvueein8" path="res://Prefabs/GreenShroom.tscn" id="14_1alju"]
 [ext_resource type="PackedScene" uid="uid://ykyqseloq62s" path="res://Prefabs/MovingPlatform.tscn" id="15_5v8i3"]
 [ext_resource type="Script" uid="uid://ur5fxy5jvr5k" path="res://Scripts/KillPlayer.gd" id="16_tsss4"]
-[ext_resource type="PackedScene" uid="uid://el6bli7gqrje" path="res://Prefabs/BlueBug.tscn" id="17_s5d5r"]
+[ext_resource type="PackedScene" uid="uid://chppse55dqwkh" path="res://Prefabs/BlueBugEVIL.tscn" id="17_p2sx0"]
 [ext_resource type="PackedScene" uid="uid://1qi3hvhflads" path="res://Prefabs/Fly.tscn" id="18_06tg8"]
 [ext_resource type="PackedScene" uid="uid://b3q0gq2qln0g5" path="res://Prefabs/Evil_Jam.tscn" id="19_fgdcu"]
+[ext_resource type="PackedScene" uid="uid://drie5rivmdsh3" path="res://Prefabs/DialogueBox.tscn" id="20_tc3ri"]
+[ext_resource type="PackedScene" uid="uid://cn3hgoe21me7y" path="res://Prefabs/BoxPushArea.tscn" id="21_3nkac"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qla6v"]
 texture = ExtResource("7_455hk")
@@ -94,7 +96,7 @@ texture = ExtResource("2_tc3ri")
 expand_mode = 2
 
 [node name="Player" parent="." instance=ExtResource("3_3nkac")]
-position = Vector2(89, 140)
+position = Vector2(104, 130)
 push_force = 400
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
@@ -102,6 +104,10 @@ push_force = 400
 [node name="CanvasLayer" type="CanvasLayer" parent="Player/Camera2D"]
 
 [node name="ConsoleUi" parent="Player/Camera2D/CanvasLayer" instance=ExtResource("4_eqm1k")]
+
+[node name="RichTextLabel" parent="Player/Camera2D/CanvasLayer/ConsoleUi/ColorRect/ColorRect" index="0"]
+level1 = false
+level3 = true
 
 [node name="CentipedeBodySpawner" type="Node2D" parent="."]
 position = Vector2(111, 159)
@@ -116,8 +122,8 @@ tile_map_data = PackedByteArray("AAAAAAoAAAAAAAAAAAABAAoAAAAAAAAAAAACAAoAAAAAAAA
 tile_set = SubResource("TileSet_undaa")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-collision_layer = 23
-collision_mask = 23
+collision_layer = 55
+collision_mask = 55
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 polygon = PackedVector2Array(0, 48, 0, 176, 48, 176, 79, 192, 176, 192, 176, 176, 144, 176, 144, 160, 16, 160, 16, 48)
@@ -202,7 +208,7 @@ deactivatable = true
 
 [node name="Switch4" parent="." node_paths=PackedStringArray("connectedObjects") instance=ExtResource("9_w46me")]
 position = Vector2(1331, 56)
-resetTimer = 4
+resetTimer = 7
 connectedObjects = [NodePath("Door4")]
 
 [node name="Door4" parent="Switch4" instance=ExtResource("10_7u0fh")]
@@ -211,7 +217,7 @@ deactivatable = true
 
 [node name="Switch5" parent="." node_paths=PackedStringArray("connectedObjects") instance=ExtResource("9_w46me")]
 position = Vector2(1298, 104)
-resetTimer = 5
+resetTimer = 6
 connectedObjects = [NodePath("Door5")]
 
 [node name="Door5" parent="Switch5" instance=ExtResource("10_7u0fh")]
@@ -255,7 +261,10 @@ corrupt = true
 
 [node name="MovingPlatform3" parent="." instance=ExtResource("15_5v8i3")]
 position = Vector2(1457, 104)
+collision_layer = 33
+collision_mask = 33
 lock_rotation = true
+timerSetMove = 3
 corrupt = true
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
@@ -304,49 +313,24 @@ position = Vector2(-137, 32)
 rotation = 3.14159
 deactivatable = true
 
-[node name="BlueBug" parent="." instance=ExtResource("17_s5d5r")]
+[node name="BlueBug6" parent="." instance=ExtResource("17_p2sx0")]
 position = Vector2(1244, 128)
-evil = true
 
-[node name="BlueBug4" parent="." instance=ExtResource("17_s5d5r")]
+[node name="BlueBug" parent="." instance=ExtResource("17_p2sx0")]
 position = Vector2(1775, 144)
-collision_mask = 4
-evil = true
 
-[node name="BlueBug5" parent="." instance=ExtResource("17_s5d5r")]
+[node name="BlueBug4" parent="." instance=ExtResource("17_p2sx0")]
 position = Vector2(1663, 224)
-evil = true
-
-[node name="BlueBug2" parent="." instance=ExtResource("17_s5d5r")]
-position = Vector2(1291, 48)
-evil = true
-
-[node name="BlueBug3" parent="." instance=ExtResource("17_s5d5r")]
-position = Vector2(1302, 304)
-evil = true
-
-[node name="Fly" parent="." instance=ExtResource("18_06tg8")]
-position = Vector2(712, 309)
-evil = true
 
 [node name="Fly4" parent="." instance=ExtResource("18_06tg8")]
 position = Vector2(1672, 120)
 evil = true
 horizontal = true
 
-[node name="Fly5" parent="." instance=ExtResource("18_06tg8")]
-position = Vector2(1624, 152)
-timerSetMove = 2
-evil = true
-horizontal = true
-
-[node name="Fly6" parent="." instance=ExtResource("18_06tg8")]
-position = Vector2(1688, 184)
-evil = true
-horizontal = true
-
 [node name="Fly2" parent="." instance=ExtResource("18_06tg8")]
 position = Vector2(1111, 125)
+move_speed = 125
+timerSetMove = 1
 evil = true
 
 [node name="Fly3" parent="." instance=ExtResource("18_06tg8")]
@@ -356,3 +340,57 @@ evil = true
 [node name="Jam" parent="." instance=ExtResource("19_fgdcu")]
 position = Vector2(1832, 200)
 levelPath = "res://Scenes/level4.tscn"
+
+[node name="Fly5" parent="." instance=ExtResource("18_06tg8")]
+position = Vector2(1625, 152)
+move_speed = -100
+evil = true
+horizontal = true
+
+[node name="DialogueBox" parent="." instance=ExtResource("20_tc3ri")]
+position = Vector2(745, 143)
+scale = Vector2(2.87815, 2.91721)
+isError = true
+dialogue = "they'rE not so friendly now, are they?"
+
+[node name="DialogueBox2" parent="." instance=ExtResource("20_tc3ri")]
+position = Vector2(1047, 153)
+scale = Vector2(2.87815, 2.91721)
+isDev = true
+dialogue = "Woah, they are NOT supposed to do that. You have a poster that you can hide with by pressing \"Shift\". You might be able to use it to hide if you find any more aggressive bugs. They shouldn't even hurt you if you're hold it."
+
+[node name="BoxPushArea" parent="." instance=ExtResource("21_3nkac")]
+position = Vector2(1531, 190)
+scale = Vector2(7.38336, 15.28)
+pushDir = Vector2(0, 0)
+pushForce = 0
+emergencyBox = ExtResource("8_pdvwv")
+
+[node name="BoxPushArea" parent="BoxPushArea" instance=ExtResource("21_3nkac")]
+position = Vector2(1531, 190)
+scale = Vector2(7.38336, 15.28)
+emergencyBox = ExtResource("8_pdvwv")
+boxSpot = Vector2(1635, 177)
+
+[node name="BoxPushArea2" parent="." instance=ExtResource("21_3nkac")]
+position = Vector2(1829, 211)
+scale = Vector2(5.87959, 4.01311)
+emergencyBox = ExtResource("8_pdvwv")
+boxSpot = Vector2(1747, 228)
+
+[node name="BoxPushArea3" parent="." instance=ExtResource("21_3nkac")]
+position = Vector2(1361, 99)
+pushDir = Vector2(-1, 0)
+pushForce = 10
+
+[node name="BlueBug7" parent="." instance=ExtResource("17_p2sx0")]
+position = Vector2(1284, 48)
+speed = 25
+
+[node name="BlueBug8" parent="." instance=ExtResource("17_p2sx0")]
+position = Vector2(1344, 224)
+
+[node name="BlueBug5" parent="." instance=ExtResource("17_p2sx0")]
+position = Vector2(1655, 80)
+
+[editable path="Player/Camera2D/CanvasLayer/ConsoleUi"]

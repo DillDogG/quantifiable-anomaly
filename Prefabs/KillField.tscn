@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://bwbgyrfmae4hu"]
 
-[ext_resource type="Script" uid="uid://bfphbsk5v2l63" path="res://Scripts/kill_field.gd" id="1_6tawd"]
+[ext_resource type="Script" uid="uid://ur5fxy5jvr5k" path="res://Scripts/KillPlayer.gd" id="1_6tawd"]
 [ext_resource type="Texture2D" uid="uid://k0uqs5kchi7a" path="res://Assets/corruptedFlyBug.png" id="2_kef24"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_26ywh"]

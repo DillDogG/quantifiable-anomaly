@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://bbohvpavgce2f"]
+[gd_scene load_steps=26 format=4 uid="uid://bbohvpavgce2f"]
 
 [ext_resource type="PackedScene" uid="uid://08qqblmyisoh" path="res://UI/ConsoleUI.tscn" id="1_jgkgd"]
 [ext_resource type="Texture2D" uid="uid://vmaykyfxmemh" path="res://Assets/background.png" id="2_bs12r"]
@@ -19,6 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://c8gyhl35pcxmi" path="res://Prefabs/Jam.tscn" id="17_yymuf"]
 [ext_resource type="PackedScene" uid="uid://el6bli7gqrje" path="res://Prefabs/BlueBug.tscn" id="18_esggg"]
 [ext_resource type="PackedScene" uid="uid://1qi3hvhflads" path="res://Prefabs/Fly.tscn" id="19_nolpu"]
+[ext_resource type="PackedScene" uid="uid://cn3hgoe21me7y" path="res://Prefabs/BoxPushArea.tscn" id="20_mcj63"]
+[ext_resource type="PackedScene" uid="uid://drie5rivmdsh3" path="res://Prefabs/DialogueBox.tscn" id="21_af2a1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qla6v"]
 texture = ExtResource("6_u1b78")
@@ -64,6 +66,7 @@ size = Vector2(2419, 20)
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("4_cpkqv")
 autoplay = true
+parameters/looping = true
 
 [node name="Background" type="Control" parent="."]
 z_index = -2
@@ -313,3 +316,37 @@ position = Vector2(1111, 125)
 
 [node name="Fly3" parent="." instance=ExtResource("19_nolpu")]
 position = Vector2(1400, 152)
+
+[node name="BoxPushArea" parent="." instance=ExtResource("20_mcj63")]
+position = Vector2(463, 161)
+rotation = -0.506166
+scale = Vector2(2.68687, 1)
+pushDir = Vector2(0.1, -1)
+
+[node name="BoxPushArea2" parent="." instance=ExtResource("20_mcj63")]
+position = Vector2(1362, 95)
+pushDir = Vector2(-1, 0)
+
+[node name="DialogueBox" parent="." instance=ExtResource("21_af2a1")]
+position = Vector2(394, 133)
+scale = Vector2(2.87815, 2.91721)
+isMessage = true
+dialogue = "Push the box up the hill to help you scale the wall blocking your way!"
+
+[node name="DialogueBox2" parent="." instance=ExtResource("21_af2a1")]
+position = Vector2(561, 128)
+scale = Vector2(2.87815, 2.91721)
+isMessage = true
+dialogue = "Scale the platforms to reach the switch, then press ‘E’ to flip it and open the door!"
+
+[node name="DialogueBox3" parent="." instance=ExtResource("21_af2a1")]
+position = Vector2(765, 144)
+scale = Vector2(7.19817, 2.91721)
+isMessage = true
+dialogue = "Stand on the moving platform to cross the gap!"
+
+[node name="DialogueBox4" parent="." instance=ExtResource("21_af2a1")]
+position = Vector2(1057, 157)
+scale = Vector2(2.87815, 2.91721)
+isMessage = true
+dialogue = "Continue exploring until you find the JAR OF JAM!"

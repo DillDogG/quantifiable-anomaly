@@ -2,12 +2,12 @@ extends Node2D
 class_name CentiSegment
 
 @export var previous: CentiSegment
-@export var speed = 40
+@export var speed = 45
 var player: Player
 var applePosition = Vector2(232, 112)
 var forward = Vector2(1, 0)
 var speedMult = 1.0
-var spawnedJams: Array[AnimatedSprite2D]
+var spawnedJams: Array[Area2D]
 
 func _ready():
 	player = get_tree().root.get_child(0).find_child("Player")
