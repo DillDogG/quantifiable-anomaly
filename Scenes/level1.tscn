@@ -19,8 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://c8gyhl35pcxmi" path="res://Prefabs/Jam.tscn" id="17_yymuf"]
 [ext_resource type="PackedScene" uid="uid://el6bli7gqrje" path="res://Prefabs/BlueBug.tscn" id="18_esggg"]
 [ext_resource type="PackedScene" uid="uid://1qi3hvhflads" path="res://Prefabs/Fly.tscn" id="19_nolpu"]
-[ext_resource type="PackedScene" uid="uid://cn3hgoe21me7y" path="res://Prefabs/BoxPushArea.tscn" id="20_mcj63"]
-[ext_resource type="PackedScene" uid="uid://drie5rivmdsh3" path="res://Prefabs/DialogueBox.tscn" id="21_af2a1"]
+[ext_resource type="PackedScene" uid="uid://dh3tviw2pt06r" path="res://Prefabs/BoxPushArea.tscn" id="20_mcj63"]
+[ext_resource type="PackedScene" path="res://Prefabs/DialogueBox.tscn" id="21_af2a1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qla6v"]
 texture = ExtResource("6_u1b78")

@@ -19,8 +19,8 @@
 [ext_resource type="PackedScene" uid="uid://el6bli7gqrje" path="res://Prefabs/BlueBug.tscn" id="18_051s1"]
 [ext_resource type="PackedScene" uid="uid://b3q0gq2qln0g5" path="res://Prefabs/Evil_Jam.tscn" id="19_051s1"]
 [ext_resource type="PackedScene" uid="uid://1qi3hvhflads" path="res://Prefabs/Fly.tscn" id="19_in4v8"]
-[ext_resource type="PackedScene" uid="uid://drie5rivmdsh3" path="res://Prefabs/DialogueBox.tscn" id="20_in4v8"]
-[ext_resource type="PackedScene" uid="uid://cn3hgoe21me7y" path="res://Prefabs/BoxPushArea.tscn" id="21_mu7lp"]
+[ext_resource type="PackedScene" path="res://Prefabs/DialogueBox.tscn" id="20_in4v8"]
+[ext_resource type="PackedScene" uid="uid://dh3tviw2pt06r" path="res://Prefabs/BoxPushArea.tscn" id="21_mu7lp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qla6v"]
 texture = ExtResource("7_1apgh")
@@ -216,7 +216,7 @@ deactivatable = true
 
 [node name="Switch5" parent="." node_paths=PackedStringArray("connectedObjects") instance=ExtResource("9_uoomo")]
 position = Vector2(1298, 104)
-resetTimer = 5
+resetTimer = 6
 connectedObjects = [NodePath("Door5")]
 
 [node name="Door5" parent="Switch5" instance=ExtResource("10_4jqg0")]
@@ -358,5 +358,7 @@ dialogue = "‘Platform Movement’ vector set to <random>"
 position = Vector2(1361, 99)
 pushDir = Vector2(-1, 0)
 pushForce = 10
+
+[connection signal="area_entered" from="Jam" to="Jam" method="_on_area_entered"]
 
 [editable path="Player/Camera2D/CanvasLayer/ConsoleUi"]
