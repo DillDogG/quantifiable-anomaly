@@ -18,6 +18,8 @@ func read_input():
 	velocity.x = input_direction * (move_speed * (0.5 if Input.is_action_pressed("hide") else 1.0))
 	
 func _physics_process(delta):
+	if Input.is_action_just_pressed("reset"):
+		get_tree().reload_current_scene()
 	gravity = get_gravity()
 	velocity.y += (gravity.y * delta) / 3
 	coyoteTime -= delta
@@ -44,8 +46,6 @@ func check_box_collisions():
 		var collision = get_slide_collision(i)
 		if collision.get_collider() is RigidBody2D:
 			collision.get_collider().apply_central_impulse(Vector2(-collision.get_normal().x * push_force, 0))
-		if collision.get_collider().is_in_group("centipede"):
-			print("test")
 
 
 func dropJam():

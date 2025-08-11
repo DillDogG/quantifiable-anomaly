@@ -29,8 +29,8 @@ animations = [{
 size = Vector2(12, 16)
 
 [node name="EvilJam" type="Area2D" groups=["evil_jam"]]
-collision_layer = 0
-collision_mask = 0
+collision_layer = 9
+collision_mask = 9
 script = ExtResource("1_0ikjc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -39,3 +39,5 @@ frame_progress = 0.731814
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_tg71p")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

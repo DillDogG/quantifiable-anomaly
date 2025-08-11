@@ -7,7 +7,7 @@ var player: Player
 var applePosition = Vector2(232, 112)
 var forward = Vector2(1, 0)
 var speedMult = 1.0
-var spawnedJams: Array[AnimatedSprite2D]
+var spawnedJams: Array[Area2D]
 
 func _ready():
 	player = get_tree().root.get_child(0).find_child("Player")
@@ -34,7 +34,6 @@ func _physics_process(delta):
 		speedMult += 0.05
 		updateForward()
 	updateAppleForward()
-	if previous == null: print(position)
 
 func updateAppleForward():
 	if applePosition.x == round(position.x):

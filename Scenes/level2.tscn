@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://t2ruv5hv44q3"]
+[gd_scene load_steps=25 format=4 uid="uid://t2ruv5hv44q3"]
 
 [ext_resource type="AudioStream" uid="uid://dqvfn2ttu6eld" path="res://Audio/calmTheme.mp3" id="1_orbd0"]
 [ext_resource type="Texture2D" uid="uid://vmaykyfxmemh" path="res://Assets/background.png" id="2_5flq6"]
@@ -19,6 +19,7 @@
 [ext_resource type="PackedScene" uid="uid://el6bli7gqrje" path="res://Prefabs/BlueBug.tscn" id="18_051s1"]
 [ext_resource type="PackedScene" uid="uid://b3q0gq2qln0g5" path="res://Prefabs/Evil_Jam.tscn" id="19_051s1"]
 [ext_resource type="PackedScene" uid="uid://1qi3hvhflads" path="res://Prefabs/Fly.tscn" id="19_in4v8"]
+[ext_resource type="PackedScene" uid="uid://cn3hgoe21me7y" path="res://Prefabs/BoxPushArea.tscn" id="20_in4v8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qla6v"]
 texture = ExtResource("7_1apgh")
@@ -64,6 +65,7 @@ size = Vector2(2419, 20)
 [node name="Music" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("1_orbd0")
 autoplay = true
+parameters/looping = true
 
 [node name="Background" type="Control" parent="."]
 z_index = -2
@@ -333,5 +335,33 @@ position = Vector2(1111, 125)
 position = Vector2(1400, 152)
 
 [node name="Jam" parent="." instance=ExtResource("19_051s1")]
-position = Vector2(1832, 200)
-levelPath = "res://Scenes/level3.tscn"
+position = Vector2(1671, 86)
+
+[node name="BoxPushArea2" parent="." instance=ExtResource("20_in4v8")]
+position = Vector2(1361, 101)
+scale = Vector2(1.60691, 1)
+pushDir = Vector2(-1, 0)
+
+[node name="BoxPushArea" parent="." instance=ExtResource("20_in4v8")]
+position = Vector2(1816, 210)
+scale = Vector2(4.261, 3.559)
+pushDir = Vector2(-1, 0)
+pushForce = 0
+emergencyBox = ExtResource("8_ue4po")
+boxSpot = Vector2(1750, 227)
+
+[node name="BoxPushArea3" parent="." instance=ExtResource("20_in4v8")]
+position = Vector2(1535, 170)
+scale = Vector2(6.941, 9.824)
+pushDir = Vector2(-1, 0)
+pushForce = 0
+emergencyBox = ExtResource("8_ue4po")
+boxSpot = Vector2(1634, 174)
+
+[node name="BoxPushArea4" parent="." instance=ExtResource("20_in4v8")]
+position = Vector2(1401, 119)
+scale = Vector2(4.261, 8.549)
+pushDir = Vector2(-1, 0)
+pushForce = 0
+emergencyBox = ExtResource("8_ue4po")
+boxSpot = Vector2(1322, 104)
